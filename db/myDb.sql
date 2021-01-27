@@ -1,43 +1,53 @@
 
 CREATE TABLE users (
-  user_id int primary key,
+  user_id SERIAL,
   admin boolean,
-  first_name varchar,
-  last_name varchar,
-  email varchar,
-  hashed_password varchar
+  first_name VARCHAR(255),
+  last_name VARCHAR(255),
+  email VARCHAR(255),
+  hashed_password VARCHAR(255),
+  PRIMARY KEY (user_id)
 );
 
-CREATE TABLE address (
-  address_id int primary key,
-  user_id int references users(user_id),
-  street varchar,
-  country varchar,
-  state varchar,
-  city varchar,
-  zip_code varchar
+CREATE TABLE addresses (
+  address_id SERIAL,
+  user_id int NOT NULL,
+  street VARCHAR(255),
+  country VARCHAR(255),
+  state VARCHAR(255),
+  city VARCHAR(255),
+  zip_code VARCHAR(255),
+  PRIMARY KEY (address_id),
+  FOREIGN KEY (user_id) REFERENCES users (user_id)
  );
 
 
 CREATE TABLE products (
-  product_id int primary key,
-  name varchar,
-  description text,
-  price float,
-  type varchar,
-  picture_path varchar
+  product_id SERIAL,
+  name VARCHAR(255),
+  description TEXT,
+  price FLOAT,
+  type VARCHAR(255),
+  picture_path VARCHAR(255),
+  PRIMARY KEY (product_id)
 );
 
 CREATE TABLE reviews (
-  review_id int primary key,
-  user_id int references users(user_id),
-  product_id int references products(product_id),
+  review_id SERIAL,
+  user_id int NOT NULL,
+  product_id int NOT NULL,
   review_text text,
-  created_at date
+  created_at date,
+  PRIMARY KEY (review_id),
+  FOREIGN KEY (user_id) REFERENCES users (user_id),
+  FOREIGN KEY (product_id) REFERENCES products (product_id)
 );
 
-CREATE TABLE shopping_cart (
-  cart_id int primary key,
-  user_id int references users(user_id),
-  product_id int references products(product_id)
+CREATE TABLE shopping_carts (
+  cart_id SERIAL,
+  user_id int NOT NULL,
+  product_id int NOT NULL,
+  PRIMARY KEY (cart_id),
+  FOREIGN KEY (user_id) REFERENCES users (user_id),
+  FOREIGN KEY (product_id) REFERENCES products (product_id)
 );
