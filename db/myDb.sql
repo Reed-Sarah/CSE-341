@@ -9,7 +9,8 @@ CREATE TABLE users (
 );
 
 CREATE TABLE address (
-user_id int references users(user_id),
+  address_id int primary key,
+  user_id int references users(user_id),
   street varchar,
   country varchar,
   state varchar,
