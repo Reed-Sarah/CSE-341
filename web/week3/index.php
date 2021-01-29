@@ -1,7 +1,7 @@
 <?php
 include_once "model/items.php";
 include_once "library/functions.php";
-
+include_once "library/connection.php";
 
 $action = filter_input(INPUT_POST, 'action');
  if ($action == NULL){
@@ -103,7 +103,9 @@ foreach ($_SESSION['cart'] as $itemId)
         include "views/browseItems.php";
 
     default:
-    $itemsList = buildItemsList($items);
+    //$itemsList = buildItemsList($items);
+    $products = getAllProduct();
+    var_dump($products);
         include "views/browseItems.php";
         break;
 }
