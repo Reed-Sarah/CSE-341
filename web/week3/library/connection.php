@@ -6,9 +6,18 @@ function pg_connection_string_from_database_url() {
 }
 
 function connectDB(){
-
+try
+{
   $pg_conn = pg_connect(pg_connection_string_from_database_url());
+
+}
+catch (PDOException $ex)
+{
+  echo "enter error block";
+  echo 'Error!: ' . $ex->getMessage();
+  die();
+}
 }
 
-//connectDB();
+connectDB();
 ?>
