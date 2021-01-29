@@ -24,4 +24,5 @@ catch (PDOException $ex)
 }
 }
 
+connectDB();
 ?>
