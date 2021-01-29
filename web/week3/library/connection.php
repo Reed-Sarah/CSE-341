@@ -1,21 +1,15 @@
 <?php
 
+function pg_connection_string_from_database_url() {
+  extract(parse_url($_ENV["DATABASE_URL"]));
+  return "user=$user password=$pass host=$host dbname=" . substr($path, 1); # <- you may want to add sslmode=require there too
+}
+
 function connectDB(){
 try
 {
-  $dbUrl = getenv('DATABASE_URL');
+  $pg_conn = pg_connect(pg_connection_string_from_database_url());
 
-  $dbOpts = parse_url($dbUrl);
-
-  $dbHost = $dbOpts["host"];
-  $dbPort = $dbOpts["port"];
-  $dbUser = $dbOpts["user"];
-  $dbPassword = $dbOpts["pass"];
-  $dbName = ltrim($dbOpts["path"],'/');
-
-  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $ex)
 {
