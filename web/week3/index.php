@@ -105,9 +105,9 @@ foreach ($_SESSION['cart'] as $itemId)
 
     default:
     //$itemsList = buildItemsList($items);
-   //$products = getAllProducts();
-   // var_dump($products);
-   connectDB();
+   $products = getAllProducts();
+     var_dump($products);
+  // connectDB();
         include "views/browseItems.php";
         break;
 }
