@@ -19,6 +19,7 @@ try
 }
 catch (PDOException $ex)
 {
+  echo "enter error block";
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
