@@ -1,23 +1,21 @@
 <?php
 
-function pg_connection_string_from_database_url() {
-  extract(parse_url($_ENV["DATABASE_URL"]));
-  return "user=$user password=$pass host=$host dbname=" . substr($path, 1); # <- you may want to add sslmode=require there too
-}
-
-function connectDB(){
 try
 {
-  $pg_conn = pg_connect(pg_connection_string_from_database_url());
+  $user = 'postgres';
+  $password = 'password';
+  $db = new PDO('pgsql:host=localhost;dbname=myTestDB', $user, $password);
 
+  // this line makes PDO give us an exception when there are problems,
+  // and can be very helpful in debugging! (But you would likely want
+  // to disable it for production environments.)
+  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $ex)
 {
-  echo "enter error block";
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-}
 
-connectDB();
+
 ?>
