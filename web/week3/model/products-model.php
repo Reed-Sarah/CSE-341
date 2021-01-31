@@ -1,7 +1,7 @@
 <?php
 
 function getAllProducts() {
-$db = connectDB();
+//$db = connectDB();
 //  $sql = 'SELECT * FROM products'; 
 //      $stmt = $db->prepare($sql); 
 // //     //$stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT); 
