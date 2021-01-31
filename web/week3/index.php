@@ -4,6 +4,8 @@ include_once "library/functions.php";
 include_once "library/connection.php";
 include_once "model/products-model.php";
 
+$db = connectDB();
+
 $action = filter_input(INPUT_POST, 'action');
  if ($action == NULL){
   $action = filter_input(INPUT_GET, 'action');
@@ -105,9 +107,9 @@ foreach ($_SESSION['cart'] as $itemId)
 
     default:
     //$itemsList = buildItemsList($items);
-   //getAllProducts();
-     //var_dump($products);
-  // connectDB();
+   $products = getAllProducts($db);
+     var_dump($products);
+  
         include "views/browseItems.php";
         break;
 }

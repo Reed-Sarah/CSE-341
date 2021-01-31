@@ -1,5 +1,7 @@
 <?php
 
+function connectDB() {
+
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -22,5 +24,5 @@ catch (PDOException $ex)
  // die();
 }
 
-
+}
 ?>
