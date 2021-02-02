@@ -3,11 +3,11 @@ function buildItemsList($items){
     $l = '<ul id="items-list">';
     foreach ($items as $item) {
      $l .= "<li>";
-     $l .= "<div class='item-container'><img src='$item[path]'>";
+     $l .= "<div class='item-container'><img src='$item[picture_path]'>";
      $l .= "<h2>$item[name]</h2>";
      $l .= "<h3>$$item[price]</h3>";
      $l .= "<form  method='get' action='index.php'>";
-     $l .= "<input type='hidden' name='itemId' value='$item[id]'>";
+     $l .= "<input type='hidden' name='itemId' value='$item[product_id]'>";
      $l .= "<input type='hidden' name='action' value='addToCart'>";
      $l .= "<button type='submit'>Add to Cart</button>";
      $l .= '</form></div></li>';

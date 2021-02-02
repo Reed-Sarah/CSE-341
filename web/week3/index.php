@@ -106,9 +106,10 @@ foreach ($_SESSION['cart'] as $itemId)
         include "views/browseItems.php";
 
     default:
-    //$itemsList = buildItemsList($items);
+    
    $products = getAllProducts($db);
-     var_dump($products);
+   $itemsList = buildItemsList($products);
+    // var_dump($products);
   
         include "views/browseItems.php";
         break;
