@@ -102,7 +102,8 @@ foreach ($_SESSION['cart'] as $itemId)
         break;
     case "filter":
         $type = filter_input(INPUT_GET, 'type', FILTER_SANITIZE_STRING);
-        $items = buildFilteredItemsList($items, $type);
+        $products = getProductsByType($type);
+        $itemsList = buildItemsList($products);
         include "views/browseItems.php";
 
     default:
