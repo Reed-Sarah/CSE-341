@@ -93,8 +93,13 @@ ul {
 
   .FLinks {
       text-align: right;
-      
+      margin: 1em;
   }
+
+  .BFLinks{
+margin: 1em;
+  }
+
   html{
     box-sizing: border-box;
    }
