@@ -105,7 +105,7 @@ foreach ($_SESSION['cart'] as $itemId)
         $products = getProductsByType($type);
         $itemsList = buildItemsList($products);
         include "views/browseItems.php";
-
+break;
     default:
     
    $products = getAllProducts($db);
