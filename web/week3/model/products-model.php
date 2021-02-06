@@ -12,7 +12,7 @@ function getAllProducts($db) {
 
 function getProductsByType($type) {
     $db = connectDB();
-    $sql = 'SELECT name, price, picture_path FROM products WHERE "type" = :types'; 
+    $sql = 'SELECT * FROM products WHERE "type" = :types'; 
         $stmt = $db->prepare($sql); 
         $stmt->bindValue(':types', $type, PDO::PARAM_STRING); 
         $stmt->execute(); 
