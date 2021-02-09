@@ -1,11 +1,11 @@
 
 CREATE TABLE users (
   user_id SERIAL,
-  admin boolean,
+  is_admin boolean,
   first_name VARCHAR(255),
   last_name VARCHAR(255),
   email VARCHAR(255),
-  hashed_password VARCHAR(255),
+  user_password VARCHAR(255),
   PRIMARY KEY (user_id)
 );
 
