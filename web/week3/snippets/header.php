@@ -12,10 +12,10 @@
 <?php
 if(isset($_SESSION['loggedin']))
 {
-    echo "<a class='Logout' href='/phpmotors/accounts/index.php?action=Logout' title='Logout of PHP Motors'>Logout</a>";
+    echo "<a class='account' href='/week3/accounts/index.php?action=Logout' title='Logout of Sarah's Boutique'>Logout</a>";
 }
 else {
-    echo "<a class='Login' href='/phpmotors/accounts/index.php?action=account' title='Login into PHP Motors'>My Account</a>";
+    echo "<a class='account' href='/week3/accounts/index.php?action=account' title='Login Sarah's Boutique'>My Account</a>";
 }
 ?>
 </nav>
