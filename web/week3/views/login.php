@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sarah's Boutique</title>
     <link rel="stylesheet" href="../css/styles.css" media="screen">
-    <link rel="stylesheet" href="../css/account.css" media="screen">
+    <!-- <link rel="stylesheet" href="../css/account.css" media="screen"> -->
 
 </head>
 <body>
