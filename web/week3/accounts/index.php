@@ -36,6 +36,7 @@ $action = filter_input(INPUT_POST, 'action');
        // A valid password exists, proceed with the login process
 // Query the user data based on the email address
 $userData = getUser($email, $db);
+echo "userData from controller";
 var_dump($userData);
 // Compare the password just submitted against
 // the hashed password for the matching user

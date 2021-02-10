@@ -48,6 +48,8 @@ function getUser($email, $db){
     $stmt->execute();
     $userData = $stmt->fetch(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
+    echo "userdata from model";
+    var_dump($userData);
     return $userData;
    }
 
