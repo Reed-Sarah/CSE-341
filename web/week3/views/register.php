@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP Motors template</title>
-    <link rel="stylesheet" href="../css/main.css" media="screen">
-    <link rel="stylesheet" href="../css/account.css" media="screen">
+    <link rel="stylesheet" href="../css/styles.css" media="screen">
+    <!-- <link rel="stylesheet" href="../css/account.css" media="screen"> -->
 
 </head>
 <body>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?> 
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/header.php'; ?> 
 <nav>
 <?php echo $navList; ?>
  </nav>
@@ -24,7 +24,7 @@ if (isset($message)) {
 }
 ?>
 
-        <form method="post" action="/phpmotors/accounts/index.php">
+        <form method="post" action="/week3/accounts/index.php">
        <p>All fields are required<p>     
         <label>First Name:</label><br>
             <input required type="text" placeholder="First Name" name="clientFirstname" id="fname" <?php if(isset($clientFirstname)){echo "value='$clientFirstname'";}  ?>><br>
@@ -41,7 +41,7 @@ if (isset($message)) {
 </form>
  </div>        
 </main>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?> 
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/footer.php'; ?> 
 </body>
 
 </html>
