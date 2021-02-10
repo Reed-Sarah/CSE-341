@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Motors template</title>
-    <link rel="stylesheet" href="../css/main.css" media="screen">
+    <title>Sarah's Boutique</title>
+    <link rel="stylesheet" href="../css/styles.css" media="screen">
     <link rel="stylesheet" href="../css/account.css" media="screen">
 
 </head>
 <body>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?> 
-<nav>
-<?php echo $navList; ?>
- </nav>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/header.php'; ?> 
+
 <main>
     
-        <form method="post" action="/phpmotors/accounts/">
+        <form method="post" action="/week3/accounts/">
          <h1>Login</h1>
          <div class="formFields">
          <?php
@@ -41,7 +39,7 @@ if (isset($_SESSION['message'])) {
 
         
 </main>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?> 
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/footer.php'; ?> 
 </body>
 
 </html>
