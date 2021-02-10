@@ -42,7 +42,7 @@ function checkForAccount($email, $db) {
 
    // Get user data based on an email address
 function getUser($email, $db){
-    $sql = 'SELECT user_id, first_name, last_name, email, is_admin, user_password FROM users WHERE email = :email';
+    $sql = "SELECT 'user_id', first_name, last_name, email, is_admin, user_password FROM users WHERE email = :email";
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
