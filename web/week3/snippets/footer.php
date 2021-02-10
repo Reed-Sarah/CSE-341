@@ -1,5 +1,5 @@
 <footer>
-<a href='https://www.freepik.com/vectors/background'>Background vector created by freepik - www.freepik.com</a> 
+<a href='https://www.freepik.com/vectors/background'>Attribution</a> 
 <?php 
 if(isset($_SESSION['loggedin']))
 {

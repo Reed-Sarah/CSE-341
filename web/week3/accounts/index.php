@@ -147,7 +147,7 @@ if($regOutcome === 1){
        }
       
        // Send the data to the model
-      $updateUser = updateUser($first_name, $last_name, $email, $userId);
+      $updateUser = updateUser($first_name, $last_name, $email, $userId, $db);
       
       // Check and report the result
       if($updateUser === 1){
@@ -161,7 +161,7 @@ if($regOutcome === 1){
         exit;
        } else {
         $message = "<p>Sorry $first_name, the update failed. Please try again.</p>";
-        include '../views/admin.php';
+        include '../views/manage-account.php';
         exit;
        }
     break;
@@ -172,7 +172,7 @@ if($regOutcome === 1){
       
       if(empty($checkPassword)){
         $message = '<p>*Missing or invalid password.</p>';
-        include '../views/user-update.php';
+        include '../views/manage-account.php';
         exit; 
        }
        $hashedPassword = password_hash($user_password, PASSWORD_DEFAULT);
