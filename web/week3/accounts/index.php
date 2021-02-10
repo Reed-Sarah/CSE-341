@@ -3,9 +3,9 @@
 /* Accounts Controller*/
 
 session_start();
-include_once "model/accounts.php";
-include_once "library/functions.php";
-include_once "library/connection.php";
+include_once "../model/accounts.php";
+include_once "../library/functions.php";
+include_once "../library/connection.php";
 
 $db = connectDB();
 
