@@ -24,8 +24,8 @@ $action = filter_input(INPUT_POST, 'action');
      case 'Login':
       $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
       $user_password = filter_input(INPUT_POST, 'user_password', FILTER_SANITIZE_STRING);  
-      $email = checkEmail($email);
-      $checkPassword = checkPassword($user_password);
+      $email = checkEmail($email, $db);
+      $checkPassword = checkPassword($user_password, $db);
       
       if(empty($email) || empty($checkPassword)){
         $_SESSION["message"] = '<p>Missing or invalid email or password, please try again.</p>';
@@ -35,7 +35,7 @@ $action = filter_input(INPUT_POST, 'action');
 
        // A valid password exists, proceed with the login process
 // Query the user data based on the email address
-$userData = getUser($email);
+$userData = getUser($email, $db);
 // Compare the password just submitted against
 // the hashed password for the matching user
 $hashCheck = password_verify($user_password, $userData['user_password']);

@@ -25,7 +25,7 @@ function regUser($first_name, $last_name, $email, $user_password){
    }
 
 // Check for an existing email address
-function checkForAccount($email) {
+function checkForAccount($email, $db) {
     $sql = 'SELECT email FROM users WHERE email = :email';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':email', $email, PDO::PARAM_STR);
@@ -41,7 +41,7 @@ function checkForAccount($email) {
    }
 
    // Get user data based on an email address
-function getUser($email){
+function getUser($email, $db){
     $sql = 'SELECT user_id, first_name, last_name, email, is_admin, user_password FROM users WHERE email = :email';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':email', $email, PDO::PARAM_STR);
@@ -52,7 +52,7 @@ function getUser($email){
    }
 
    // Get user data based on an Id
-function getUserInfo($user_id){
+function getUserInfo($user_id, $db){
     $sql = 'SELECT user_id, first_name, last_name, email, is_admin FROM users WHERE user_id = :user_id';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
@@ -63,7 +63,7 @@ function getUserInfo($user_id){
    }
 
    // updates user's information
-   function updateUser($first_name, $last_name, $email, $user_id){
+   function updateUser($first_name, $last_name, $email, $user_id, $db){
     
     // The SQL statement
     $sql = 'UPDATE users set first_name = :first_name, last_name = :last_name, email = :email
