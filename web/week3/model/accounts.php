@@ -1,7 +1,7 @@
 <?php
 /* Accounts Model */
 
-function regUser($first_name, $last_name, $email, $user_password){
+function regUser($first_name, $last_name, $email, $user_password, $db){
     // The SQL statement
     $sql = 'INSERT INTO users (first_name, last_name, email, user_password)
         VALUES (:first_name, :last_name, :email, :user_password)';
