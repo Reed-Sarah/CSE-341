@@ -67,11 +67,11 @@ exit;
 $last_name = filter_input(INPUT_POST, 'last_name', FILTER_SANITIZE_STRING);
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 $user_password = filter_input(INPUT_POST, 'user_password', FILTER_SANITIZE_STRING);  
-$email = checkEmail($email);
-$checkPassword = checkPassword($user_password);
+$email = checkEmail($email, $db);
+$checkPassword = checkPassword($user_password, $db);
 
 // Check if account already exists
-$existingEmail = checkForAccount($email);
+$existingEmail = checkForAccount($email, $db);
 
 // Check for existing email address in the table
 if($existingEmail){
@@ -92,7 +92,7 @@ if(empty($first_name) || empty($last_name) || empty($email) || empty($checkPassw
 $hashedPassword = password_hash($user_password, PASSWORD_DEFAULT);
 
  // Send the data to the model
-$regOutcome = regUser($first_name, $last_name, $email, $hashedPassword);
+$regOutcome = regUser($first_name, $last_name, $email, $hashedPassword, $db);
 
 // Check and report the result
 if($regOutcome === 1){
