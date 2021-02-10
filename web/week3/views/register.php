@@ -25,14 +25,14 @@ if (isset($message)) {
         <form method="post" action="/week3/accounts/index.php">
        <p>All fields are required<p>     
         <label>First Name:</label><br>
-            <input required type="text" placeholder="First Name" name="clientFirstname" id="fname" <?php if(isset($clientFirstname)){echo "value='$clientFirstname'";}  ?>><br>
+            <input required type="text" placeholder="First Name" name="first_name" id="fname" <?php if(isset($first_name)){echo "value='$first_name'";}  ?>><br>
             <label>Last Name:</label><br>
-            <input required type="text" placeholder="Last Name" name="clientLastname" id="lname" <?php if(isset($clientLastname)){echo "value='$clientLastname'";} ?> ><br>
+            <input required type="text" placeholder="Last Name" name="last_name" id="lname" <?php if(isset($last_name)){echo "value='$last_name'";} ?> ><br>
             <label>Email Address:</label><br>
-            <input required type="email" name="clientEmail" id="email" placeholder="Email Address"  <?php if(isset($clientEmail)){echo "value='$clientEmail'";} ?> > <br>
+            <input required type="email" name="email" id="email" placeholder="Email Address"  <?php if(isset($email)){echo "value='$email'";} ?> > <br>
             <label>Password:</label><br>
             <span>must be at least 8 characters and contain at least 1 uppercase character, 1 number and 1 special character </span>
-            <input required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" type="password" name="clientPassword" id="password" placeholder=Password>
+            <input required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" type="password" name="user_password" id="password" placeholder=Password>
           
     <button>Create Account</button>
     <input type="hidden" name="action" value="createAccount">
