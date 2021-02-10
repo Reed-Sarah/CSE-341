@@ -58,9 +58,10 @@ $_SESSION['loggedin'] = TRUE;
 array_pop($userData);
 // Store the array into the session
 $_SESSION['userData'] = $userData;
+var_dump($_SESSION['userData']);
 
 // Send them to the home page
-include '../';
+include '../index.php';
 exit;
       
      break;
