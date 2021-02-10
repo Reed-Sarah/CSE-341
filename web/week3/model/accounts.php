@@ -47,10 +47,7 @@ function getUser($email, $db){
     $stmt->bindValue(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
     $userData = $stmt->fetch(PDO::FETCH_ASSOC);
-    $stmt->closeCursor();
-    echo "email from model";
-    var_dump($email);
-    
+    $stmt->closeCursor();    
     return $userData;
    }
 
