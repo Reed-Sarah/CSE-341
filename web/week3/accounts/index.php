@@ -59,8 +59,8 @@ array_pop($userData);
 // Store the array into the session
 $_SESSION['userData'] = $userData;
 
-// Send them to the admin view
-include '../views/admin.php';
+// Send them to the home page
+include '../';
 exit;
       
      break;
