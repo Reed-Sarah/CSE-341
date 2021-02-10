@@ -27,11 +27,11 @@ $action = filter_input(INPUT_POST, 'action');
       $email = checkEmail($email, $db);
       $checkPassword = checkPassword($user_password, $db);
       
-      if(empty($email) || empty($checkPassword)){
-        $_SESSION["message"] = '<p>Missing or invalid email or password, please try again.</p>';
-        include '../views/login.php';
-        exit; 
-       }
+      // if(empty($email) || empty($checkPassword)){
+      //   $_SESSION["message"] = '<p>Missing or invalid email or password, please try again.</p>';
+      //   include '../views/login.php';
+      //   exit; 
+      //  }
 
        // A valid password exists, proceed with the login process
 // Query the user data based on the email address
