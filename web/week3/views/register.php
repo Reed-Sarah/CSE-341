@@ -10,9 +10,7 @@
 </head>
 <body>
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/header.php'; ?> 
-<nav>
-<?php echo $navList; ?>
- </nav>
+
 <main>
     <h1>Register</h1>
     <div class="formFields">
