@@ -42,7 +42,7 @@ function checkForAccount($email, $db) {
 
    // Get user data based on an email address
 function getUser($email, $db){
-    $sql = "SELECT 'user_id', first_name, last_name, email, is_admin, user_password FROM users WHERE email = :email";
+    $sql = 'SELECT user_id, first_name, last_name, email, is_admin, user_password FROM users WHERE email = :email';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
@@ -53,7 +53,7 @@ function getUser($email, $db){
 
    // Get user data based on an Id
 function getUserInfo($user_id, $db){
-    $sql = "SELECT 'user_id', first_name, last_name, email, is_admin FROM users WHERE user_id = :user_id";
+    $sql = 'SELECT user_id, first_name, last_name, email, is_admin FROM users WHERE user_id = :user_id';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
     $stmt->execute();
