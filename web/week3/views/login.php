@@ -30,7 +30,7 @@ if (isset($_SESSION['message'])) {
             <input required name="clientPassword" type="password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder=Password>
             <button>Login</button> 
            <input type="hidden" name="action" value="Login"> 
-   <div class="register"> <a  href="/phpmotors/accounts/index.php?action=register">Don't have an account? Sign up today!</a></div>
+   <div class="register"> <a  href="/week3/accounts/index.php?action=register">Don't have an account? Sign up today!</a></div>
 
 </div>
 
