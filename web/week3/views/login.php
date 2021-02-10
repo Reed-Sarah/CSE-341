@@ -24,10 +24,10 @@ if (isset($_SESSION['message'])) {
        
          <p>All fields are required<p>   
             <label>Email Address:</label><br>
-            <input input required type="email" name="clientEmail" id="email" placeholder="Email Address"  <?php if(isset($clientEmail)){echo "value='$clientEmail'";} ?> ><br>
+            <input input required type="email" name="email" id="email" placeholder="Email Address"  <?php if(isset($email)){echo "value='$email'";} ?> ><br>
             <label>Password:</label><br>
             <span>must be at least 8 characters and contain at least 1 uppercase character, 1 number and 1 special character </span>
-            <input required name="clientPassword" type="password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder=Password>
+            <input required name="user_password" type="password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder=Password>
             <button>Login</button> 
            <input type="hidden" name="action" value="Login"> 
    <div class="register"> <a  href="/week3/accounts/index.php?action=register">Don't have an account? Sign up today!</a></div>
