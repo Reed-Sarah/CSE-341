@@ -157,7 +157,7 @@ if($regOutcome === 1){
       
         $userInfo = getUserInfo($user_id, $db);
         $_SESSION['userData'] = $userInfo;
-        include '/week3/accounts/?action=userUpdate';
+        include '../views/manage-account.php';
         //header('Location: /week3/accounts/');
         exit;
        } else {
