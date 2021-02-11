@@ -155,7 +155,7 @@ if($regOutcome === 1){
         setcookie('firstname', $first_name, strtotime('+1 year'), '/');
         $_SESSION['message'] = "<p>$first_name, your account was successfully updated</p>";
       
-        $userInfo = getUserInfo($user_id);
+        $userInfo = getUserInfo($user_id, $db);
         $_SESSION['userData'] = $userInfo;
         //include '../views/manage-account.php';
         header('Location: /week3/accounts/');
