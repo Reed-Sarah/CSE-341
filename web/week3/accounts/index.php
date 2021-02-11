@@ -132,7 +132,7 @@ if($regOutcome === 1){
       if ($email != $_SESSION['userData']['email'])
       {
         // Check if account already exists
-      $existingEmail = checkForAccount($email);
+      $existingEmail = checkForAccount($email, $db);
       // Check for existing email address in the table
       if($existingEmail){
        $_SESSION['message'] = '<p class="notice">*That email address already exists. </p>';
