@@ -68,7 +68,7 @@ function getUserInfo($user_id, $db){
     // The SQL statement
     $sql = 'UPDATE users set first_name = :first_name, last_name = :last_name, email = :email
     WHERE user_id = :user_id';
-    // Create the prepared statement using the phpmotors connection
+    // Create the prepared statement 
     $stmt = $db->prepare($sql);
     // The next four lines replace the placeholders in the SQL
     // statement with the actual values in the variables

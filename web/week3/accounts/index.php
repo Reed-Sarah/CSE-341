@@ -26,7 +26,7 @@ $action = filter_input(INPUT_POST, 'action');
       $user_password = filter_input(INPUT_POST, 'user_password', FILTER_SANITIZE_STRING);  
       $email = checkEmail($email);
       $checkPassword = checkPassword($user_password);
-      echo "email from contoller " . $email;
+     
       // if(empty($email) || empty($checkPassword)){
       //   $_SESSION["message"] = '<p>Missing or invalid email or password, please try again.</p>';
       //   include '../views/login.php';
@@ -117,9 +117,9 @@ if($regOutcome === 1){
       exit;
     break;
     case 'accountUpdate':
-      $userId = $_SESSION['userData']['userId'];//filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-    $userInfo = getUserInfo($userId);
-      include '../views/user-update.php';
+      $user_id = $_SESSION['userData']['user_id'];//filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+    $userInfo = getUserInfo($user_id);
+      include '../views/manage-account.php';
       exit;
     break;
     case 'updateAccountInfo':
@@ -127,7 +127,7 @@ if($regOutcome === 1){
       $last_name = filter_input(INPUT_POST, 'last_name', FILTER_SANITIZE_STRING);
       $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
       $email = checkEmail($email);
-      $userId = filter_input(INPUT_POST, 'userId', FILTER_SANITIZE_NUMBER_INT);
+      $user_id = filter_input(INPUT_POST, 'user_id', FILTER_SANITIZE_NUMBER_INT);
   
       if ($email != $_SESSION['userData']['email'])
       {
@@ -148,14 +148,14 @@ if($regOutcome === 1){
        }
       
        // Send the data to the model
-      $updateUser = updateUser($first_name, $last_name, $email, $userId, $db);
+      $updateUser = updateUser($first_name, $last_name, $email, $user_id, $db);
       
       // Check and report the result
       if($updateUser === 1){
         setcookie('firstname', $first_name, strtotime('+1 year'), '/');
         $_SESSION['message'] = "<p>$first_name, your account was successfully updated</p>";
       
-        $userInfo = getUserInfo($userId);
+        $userInfo = getUserInfo($user_id);
         $_SESSION['userData'] = $userInfo;
 
         header('Location: /week3/accounts');
@@ -167,7 +167,7 @@ if($regOutcome === 1){
        }
     break;
     case 'changePassword':
-      $userId = filter_input(INPUT_POST, 'userId', FILTER_SANITIZE_NUMBER_INT);
+      $user_id = filter_input(INPUT_POST, 'user_id', FILTER_SANITIZE_NUMBER_INT);
       $user_password = filter_input(INPUT_POST, 'user_password', FILTER_SANITIZE_STRING);
       $checkPassword = checkPassword($user_password);
       
@@ -177,7 +177,7 @@ if($regOutcome === 1){
         exit; 
        }
        $hashedPassword = password_hash($user_password, PASSWORD_DEFAULT);
-       $changePassword = changePassword($hashedPassword, $userId);
+       $changePassword = changePassword($hashedPassword, $user_id);
 
 // Check and report the result
 if($changePassword === 1){
