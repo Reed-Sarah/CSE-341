@@ -60,7 +60,8 @@ $_SESSION['userData'] = $userData;
 
 
 // Send them to the home page
-include '../../';
+//include '../../week3/';
+header('location: /week3/');
 exit;
       
      break;
