@@ -112,7 +112,7 @@ $productUpdateList = buildProductsList($products);
 include "views/update-products.php";
 exit;
     break;
-    case 'delete':
+    case 'deleteProduct':
         $itemId = filter_input(INPUT_GET, 'itemId', FILTER_SANITIZE_NUMBER_INT);
         $deleteResult = deleteProduct($itemId, $db);
         if ($deleteResult) {
