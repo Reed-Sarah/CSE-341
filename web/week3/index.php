@@ -106,6 +106,11 @@ foreach ($_SESSION['cart'] as $itemId)
         $itemsList = buildItemsList($products);
         include "views/browseItems.php";
 break;
+case 'updateProducts':
+    $products = getAllProducts($db);
+$productUpdateList = buildProductsList($products);
+include "views/update-products.php";
+    break;
     default:
     
    $products = getAllProducts($db);
