@@ -60,7 +60,7 @@ $_SESSION['userData'] = $userData;
 
 
 // Send them to the home page
-include '../';
+include '../../';
 exit;
       
      break;
@@ -156,8 +156,8 @@ if($regOutcome === 1){
       
         $userInfo = getUserInfo($user_id);
         $_SESSION['userData'] = $userInfo;
-
-        header('Location: ../views/manage-account.php');
+        include '../views/manage-account.php';
+        //header('Location: ../views/manage-account.php');
         exit;
        } else {
         $message = "<p>Sorry $first_name, the update failed. Please try again.</p>";
