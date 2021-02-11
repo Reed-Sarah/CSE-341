@@ -192,7 +192,7 @@ if($changePassword === 1){
  }
     break;
     default:
-    
+    echo "entering default";
     include '../views/manage-account.php';
   exit;
     break;
