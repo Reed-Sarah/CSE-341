@@ -36,8 +36,7 @@ $action = filter_input(INPUT_POST, 'action');
        // A valid password exists, proceed with the login process
 // Query the user data based on the email address
 $userData = getUser($email, $db);
-//echo "userData from controller";
-//var_dump($userData);
+
 // Compare the password just submitted against
 // the hashed password for the matching user
 $hashCheck = password_verify($user_password, $userData['user_password']);
@@ -58,10 +57,10 @@ $_SESSION['loggedin'] = TRUE;
 array_pop($userData);
 // Store the array into the session
 $_SESSION['userData'] = $userData;
-var_dump($_SESSION['userData']);
+
 
 // Send them to the home page
-include '../index.php';
+include '../';
 exit;
       
      break;
@@ -136,14 +135,14 @@ if($regOutcome === 1){
       // Check for existing email address in the table
       if($existingEmail){
        $_SESSION['message'] = '<p class="notice">*That email address already exists. </p>';
-       include '../views/user-update.php';
+       include '../views/manage-account.php';
        exit;
       }
       }
       // Check for missing data
       if(empty($first_name) || empty($last_name) || empty($email)){
         $message = '<p>*Please provide information for all empty form fields.</p>';
-        include '../views/user-update.php';
+        include '../views/manage-account.php';
         exit; 
        }
       
@@ -158,7 +157,7 @@ if($regOutcome === 1){
         $userInfo = getUserInfo($user_id);
         $_SESSION['userData'] = $userInfo;
 
-        header('Location: /week3/accounts');
+        header('Location: ../views/manage-account.php');
         exit;
        } else {
         $message = "<p>Sorry $first_name, the update failed. Please try again.</p>";
