@@ -3,9 +3,9 @@
 <?php 
 if(isset($_SESSION['loggedin']))
 {
-    echo " | <a class='account' href='/week3/accounts' title='Manage your Account'>Manage Account</a>";
+    echo " | <a class='account' href='/week3/accounts' title='Manage your Account'>Manage Account </a>";
     if ($_SESSION['userData']['is_admin'] == true) {
-        echo "| <a href='../'>Manage Inventory</a></p>";
+        echo "| <a href='/week3/index.php?action=updateProducts'>Manage Inventory</a></p>";
     } 
 }
 else {
