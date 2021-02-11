@@ -13,6 +13,11 @@
     <div class="content">
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/header.php'; ?>
     <div class="BFLinks"><a href="index.php">&#xab; Back to Browsing</a></div>
+    <?php
+if (isset($_SESSION['message'])) {
+        echo $_SESSION['message'];
+       }
+?>
    <?php echo $productUpdateList?>
    <div class="push"></div>
 </div>

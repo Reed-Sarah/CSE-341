@@ -110,7 +110,23 @@ case 'updateProducts':
     $products = getAllProducts($db);
 $productUpdateList = buildProductsList($products);
 include "views/update-products.php";
+exit;
     break;
+    case 'delete':
+        $itemId = filter_input(INPUT_GET, 'itemId', FILTER_SANITIZE_NUMBER_INT);
+        $deleteResult = deleteProduct($itemId, $db);
+        if ($deleteResult) {
+            $message = "<p>Congratulations, item was successfully deleted.</p>";
+            $_SESSION['message'] = $message;
+            header('location: /week3/index.php?action=updateProducts');
+            exit;
+          } else {
+            $message = "<p>The deletion of $invMake $invModel failed.</p>";
+            $_SESSION['message'] = $message;
+            header('location: /week3/index.php?action=updateProducts');
+            exit;
+          }	
+break;
     default:
     
    $products = getAllProducts($db);
