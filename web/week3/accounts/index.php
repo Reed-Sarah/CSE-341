@@ -157,8 +157,8 @@ if($regOutcome === 1){
       
         $userInfo = getUserInfo($user_id, $db);
         $_SESSION['userData'] = $userInfo;
-        //include '../views/manage-account.php';
-        header('Location: /week3/accounts/');
+        include '/week3/accounts/';
+        //header('Location: /week3/accounts/');
         exit;
        } else {
         $message = "<p>Sorry $first_name, the update failed. Please try again.</p>";
