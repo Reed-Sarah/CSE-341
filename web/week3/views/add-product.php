@@ -9,7 +9,7 @@ if (!isset($_SESSION['loggedin'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sarah's Boutique</title>
-    <link rel="stylesheet" href="../css/styles.css" media="screen">
+    <link rel="stylesheet" href="css/styles.css" media="screen">
     <!-- <link rel="stylesheet" href="../css/vehicle.css" media="screen"> -->
 </head>
 <body>
@@ -40,7 +40,7 @@ if (isset($message)) {
            <label for="dress">Dress</label><br>
 
             <button type="submit">Submit</button>
-            <input type="hidden" name="action" value="addProduct">
+            <input type="hidden" name="action" value="add">
             
 
 </form>
