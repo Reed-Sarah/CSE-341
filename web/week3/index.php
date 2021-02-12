@@ -121,7 +121,7 @@ case 'add':
           //Check for missing data
           if(empty($name) || empty($description) || empty($path) || empty($price) ||empty($type) || empty($invPrice)){
             $message = '<p>*Please provide information for all empty form fields.</p>';
-            include '../view/add-product.php';
+            include '../views/add-product.php';
             exit; 
            }
           
@@ -131,11 +131,11 @@ case 'add':
           // Check and report the result
           if($regOutcome === 1){
             $message = "<p>Success! $name  was added to inventory.</p>";
-            include '../view/add-product.php';
+            include '../views/add-product.php';
             exit;
            } else {
             $message = "<p>Sorry $name was not added to Inventory. Please try again.</p>";
-            include '../view/add-product.php';
+            include '../views/add-product.php';
             exit;
            }
                break;

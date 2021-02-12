@@ -46,7 +46,7 @@ function buildItemsList($items){
     $l = '<ul id="shopping-cart">';
     foreach ($products as $item) {
      $l .= "<li>";
-     $l .= "<img src='$item[path]'>";
+     $l .= "<img src='$item[picture_path]'>";
      $l .= "<div class='item-specs'><h2>$item[name]</h2>";
      $l .= "<h3>$$item[price]</h3>$item[description]</div>";
      $l .= "<a href='index.php?action=deleteProduct&itemId=" . urlencode($item['product_id'])."'>Delete</a>";
@@ -66,7 +66,7 @@ function buildItemsList($items){
     foreach ($itemsInfo as $item) {
         $total += $item['price'];
      $l .= "<li>";
-     $l .= "<img src='$item[picture_path]'>";
+     $l .= "<img src='$item[path]'>";
      $l .= "<div class='item-specs'><h2>$item[name]</h2>";
      $l .= "<h3>$$item[price]</h3>";
      $l .= '</div></li>';
