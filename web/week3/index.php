@@ -115,7 +115,7 @@ case 'add':
           $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
           $path = "week3/images/no-image.png"; //filter_input(INPUT_POST, 'invImage');
           $price = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-          $type = filter_input(INPUT_POST, 'type', FILTER_SANITIZE_NUMBER_INT);
+          $type = filter_input(INPUT_POST, 'type', FILTER_SANITIZE_STRING);
           
           
          // Check for missing data
