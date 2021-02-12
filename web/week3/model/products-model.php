@@ -57,7 +57,7 @@ function getProductsByType($type) {
          function updateProduct($name, $description, $path, $price, $type, $itemId, $db) {
             // The SQL statement
          $sql = 'UPDATE products SET name = :name, description = :description, price = :price, type = :type, picture_path = :path WHERE product_id = :itemId';
-         // Create the prepared statement using the phpmotors connection
+         // Create the prepared statement using the connection
          $stmt = $db->prepare($sql);
          // The next four lines replace the placeholders in the SQL
          // statement with the actual values in the variables

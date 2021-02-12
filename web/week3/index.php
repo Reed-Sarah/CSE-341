@@ -186,6 +186,7 @@ case 'edit':
             header('location: /week3/index.php?action=updateProducts');
             exit;
           } else {
+              echo $name . $description . $path . $price . $type . $itemId;
             $message = "<p>The update failed.</p>";
             $_SESSION['message'] = $message;
             header('location: /week3/index.php?action=updateProducts');
