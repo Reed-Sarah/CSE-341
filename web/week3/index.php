@@ -47,7 +47,7 @@ break;
 
 case 'remove';
 $itemId = filter_input(INPUT_GET, 'itemId', FILTER_SANITIZE_NUMBER_INT);
-$removeOutcome = removeFromCart($itemId, $db);
+$removeOutcome = removeFromCart($itemId, $_SESSION['userData']['user_id'], $db);
 if($addOutcome === 1){
     $message = "<p>Success! Item removed from cart</p>";
     include 'views/cart.php';
