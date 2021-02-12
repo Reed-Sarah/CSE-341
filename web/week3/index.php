@@ -107,8 +107,6 @@ foreach ($_SESSION['cart'] as $itemId)
         include "views/browseItems.php";
 break;
 case 'addProduct':
-    $itemId = filter_input(INPUT_GET, 'itemId', FILTER_SANITIZE_NUMBER_INT);
-    $productInfo = getProductInfo($itemId, $db);
     include "views/add-product.php";
 case 'updateProducts':
     $products = getAllProducts($db);
