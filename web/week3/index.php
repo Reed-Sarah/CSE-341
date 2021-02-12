@@ -165,6 +165,7 @@ case 'editProduct':
     {
         $itemId = filter_input(INPUT_GET, 'itemId', FILTER_SANITIZE_NUMBER_INT);
         $productInfo = getProductById($itemId, $db);
+        var_dump($productInfo);
         include "views/edit-product.php";
     }
 case 'edit':
@@ -175,7 +176,7 @@ case 'edit':
           $type = filter_input(INPUT_POST, 'type', FILTER_SANITIZE_STRING);
     $itemId = filter_input(INPUT_GET, 'itemId', FILTER_SANITIZE_NUMBER_INT);
    
-        $updateResult = updateProduct($itemId, $db);
+        $updateResult = updateProduct($name, $description, $path, $price, $type, $itemId, $db);
         if ($updateResult) {
             $message = "<p>Congratulations, item was successfully updated.</p>";
             $_SESSION['message'] = $message;

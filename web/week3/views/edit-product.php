@@ -11,7 +11,7 @@
 </head>
 <body>
 <main>
-    <h1> Add Product  </h1>
+    <h1> Edit Product  </h1>
     <div class="outline">
     <?php
 if (isset($message)) {
