@@ -34,7 +34,7 @@ if (isset($message)) {
                 <option value="dress">Dress</option>
 </select>
             <button type="submit">Submit</button>
-            <input type="hidden" name="action" value="add">
+            <input type="hidden" name="action" value="edit">
 </form>
 </div>
 </main>

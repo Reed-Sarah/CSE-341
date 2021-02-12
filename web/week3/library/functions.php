@@ -49,8 +49,9 @@ function buildItemsList($items){
      $l .= "<img src='$item[picture_path]'>";
      $l .= "<div class='item-specs'><h2>$item[name]</h2>";
      $l .= "<h3>$$item[price]</h3>$item[description]</div>";
+      $l .= "<a href='index.php?action=editProduct&itemId=" . urlencode($item['product_id'])."'>Edit</a>";
      $l .= "<a href='index.php?action=deleteProduct&itemId=" . urlencode($item['product_id'])."'>Delete</a>";
-     $l .= "<a href='index.php?action=editProduct&itemId=" . urlencode($item['product_id'])."'>Edit</a>";
+    
      $l .= "</li>";
     }
     $l .= '</ul>';
