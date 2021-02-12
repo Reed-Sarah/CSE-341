@@ -50,11 +50,11 @@ $itemId = filter_input(INPUT_GET, 'itemId', FILTER_SANITIZE_NUMBER_INT);
 $removeOutcome = removeFromCart($itemId, $_SESSION['userData']['user_id'], $db);
 if($addOutcome === 1){
     $message = "<p>Success! Item removed from cart</p>";
-    include 'views/cart.php';
+    include 'index.php?action=shoppingCart';
     exit;
    } else {
     $message = "<p>Sorry item was not removed. Please try again.</p>";
-    include 'views/cart.php';
+    include 'index.php?action=shoppingCart';
     exit;
    }
       
