@@ -177,8 +177,14 @@ case 'edit':
           $path = "week3/images/no-image.png"; //filter_input(INPUT_POST, 'invImage');
           $price = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
           $type = filter_input(INPUT_POST, 'type', FILTER_SANITIZE_STRING);
-    $itemId = filter_input(INPUT_GET, 'itemId', FILTER_SANITIZE_NUMBER_INT);
+    $itemId = filter_input(INPUT_POST, 'itemId', FILTER_SANITIZE_NUMBER_INT);
    
+    if(empty($name) || empty($description) || empty($path) || empty($price) ||empty($type)){
+        $message = '<p>*Please provide information for all empty form fields.</p>';
+        echo "testing" . $name . $description . $path . $price . $type;
+        include 'views/edit-product.php';
+        exit; 
+       }
         $updateResult = updateProduct($name, $description, $path, $price, $type, $itemId, $db);
         if ($updateResult) {
             $message = "<p>Congratulations, item was successfully updated.</p>";
