@@ -119,7 +119,7 @@ case 'add':
           
           
           //Check for missing data
-          if(empty($name) || empty($description) || empty($path) || empty($price) ||empty($type) || empty($invPrice)){
+          if(empty($name) || empty($description) || empty($path) || empty($price) ||empty($type)){
             $message = '<p>*Please provide information for all empty form fields.</p>';
             include 'views/add-product.php';
             exit; 
