@@ -11,6 +11,11 @@
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/header.php'; ?> 
 
    <div class="BFLinks FLinks"> <a  href="index.php?action=shoppingCart">Shopping Cart &#xbb;</a> </div>
+   <?php
+if (isset($_SESSION['message'])) {
+        echo $_SESSION['message'];
+       }
+?>
    <?php echo $itemsList; ?>
 </div>
    <?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/footer.php'; ?> 

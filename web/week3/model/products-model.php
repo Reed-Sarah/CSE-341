@@ -31,6 +31,22 @@ function getProductsByType($type) {
             return $products; 
         }
 
+        function addToCart($itemId, $user_id, $db)
+        {
+            $sql = 'INSERT INTO shopping_carts (user_id, product_id) VALUES (:user_id, :itemId)';
+            $stmt = $db->prepare($sql);
+            $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
+            $stmt->bindValue(':itemId', $itemId, PDO::PARAM_STR);
+            // Insert the data
+            $stmt->execute();
+            // Ask how many rows changed as a result of our insert
+            $rowsChanged = $stmt->rowCount();
+            // Close the database interaction
+            $stmt->closeCursor();
+            // Return the indication of success (rows changed)
+            return $rowsChanged; 
+        }
+
         function addProduct($name, $description, $path, $price, $type, $db) {
             // The SQL statement
          $sql = 'INSERT INTO products (name, description, price, type, picture_path) VALUES (:name, :description, :price, :type, :path)';

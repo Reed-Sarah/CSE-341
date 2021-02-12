@@ -14,14 +14,24 @@ $action = filter_input(INPUT_POST, 'action');
  switch ($action) {
      case 'addToCart':
      $itemId = filter_input(INPUT_GET, 'itemId', FILTER_SANITIZE_NUMBER_INT);
-     //echo $itemId;
-     $_SESSION['cart'][] = (int)$itemId;
-     
-    header('location: index.php');
-    
-    exit;
-     break;
+     if (isset($_SESSION['userData']['user_id']) == false){
+        $SESSION['message'] = '<p class="notice">Please login to add items to your cart</p>';
+        header('location: /week3/accounts/index.php?action=account'); 
+        exit;
+     }
+     $addToCartOutcome = addToCart($itemId, $_SESSION['userData']['user_id'], $db);
 
+    // Check and report the result
+          if($addOutcome === 1){
+            $message = "<p>Item was added to your cart</p>";
+            
+            exit;
+           } else {
+            $message = "<p>Sorry item was not added to your cart. Please try again.</p>";
+            include 'views/add-product.php';
+            exit;
+           }
+               break;
      case 'shoppingCart': 
 //$shoppingCartInfo =[];
 if (isset($_SESSION['cart']))
