@@ -33,7 +33,7 @@ function getProductsByType($type) {
 
         function addProduct($name, $description, $path, $price, $type, $db) {
             // The SQL statement
-         $sql = 'INSERT INTO products (name, description, price, type, picture_path) VALUES (:name, :description, :price, :type, :path';
+         $sql = 'INSERT INTO products (name, description, price, type, picture_path) VALUES (:name, :description, :price, :type, :path)';
          // Create the prepared statement using the phpmotors connection
          $stmt = $db->prepare($sql);
          // The next four lines replace the placeholders in the SQL
