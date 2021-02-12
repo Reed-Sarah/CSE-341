@@ -166,6 +166,8 @@ case 'editProduct':
         $itemId = filter_input(INPUT_GET, 'itemId', FILTER_SANITIZE_NUMBER_INT);
         $productInfo = getProductById($itemId, $db);
         var_dump($productInfo);
+        echo "price" . $productInfo['price'];
+echo "name" . $productInfo['name'];
         include "views/edit-product.php";
     }
     exit;

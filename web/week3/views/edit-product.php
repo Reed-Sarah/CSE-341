@@ -17,8 +17,7 @@
 if (isset($message)) {
  echo $message;
 }
-echo "price" . $productInfo['price'];
-echo "name" . $productInfo['name'];
+
 ?>
 
     <form method="post" action="/week3/index.php">
