@@ -21,7 +21,7 @@ function getProductsByType($type) {
         return $products; 
     }
 
-    function getProductsById($itemId, $db) {
+    function getProductById($itemId, $db) {
         $sql = 'SELECT * FROM products WHERE product_id = :itemId'; 
             $stmt = $db->prepare($sql); 
             $stmt->bindValue(':itemId', $itemId, PDO::PARAM_STR); 

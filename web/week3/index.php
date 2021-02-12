@@ -134,7 +134,7 @@ break;
 case 'editProduct':
     {
         $itemId = filter_input(INPUT_GET, 'itemId', FILTER_SANITIZE_NUMBER_INT);
-        $productInfo = getProductInfo($itemId, $db);
+        $productInfo = getProductById($itemId, $db);
         include "views/edit-product.php";
     }
 case 'edit':
