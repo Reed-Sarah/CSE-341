@@ -47,6 +47,16 @@ function getProductsByType($type) {
             return $rowsChanged; 
         }
 
+        function getShoppingCartInfo($user_id, $db) {
+            $sql = 'SELECT * FROM shopping_carts c JOIN products p USING (product_id) WHERE c.user_id = :user_id'; 
+            $stmt = $db->prepare($sql); 
+            $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR); 
+            $stmt->execute(); 
+            $products = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+            $stmt->closeCursor(); 
+            return $products; 
+        }
+
         function addProduct($name, $description, $path, $price, $type, $db) {
             // The SQL statement
          $sql = 'INSERT INTO products (name, description, price, type, picture_path) VALUES (:name, :description, :price, :type, :path)';

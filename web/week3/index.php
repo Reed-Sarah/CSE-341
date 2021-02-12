@@ -22,38 +22,23 @@ $action = filter_input(INPUT_POST, 'action');
      $addToCartOutcome = addToCart($itemId, $_SESSION['userData']['user_id'], $db);
 
     // Check and report the result
-          if($addOutcome === 1){
+          if($addToCartOutcome === 1){
             $message = "<p>Item was added to your cart</p>";
             
             exit;
            } else {
             $message = "<p>Sorry item was not added to your cart. Please try again.</p>";
-            include 'views/add-product.php';
+            
             exit;
            }
                break;
      case 'shoppingCart': 
-//$shoppingCartInfo =[];
-if (isset($_SESSION['cart']))
-{
-foreach ($_SESSION['cart'] as $itemId)
-{
-    if ($itemId !== null)
-    {
-    $shoppingCartInfo[] = array (
-        "id" => $items[$itemId]['id'],
-        "name" => $items[$itemId]['name'],
-        "path" => $items[$itemId]['path'],
-        "price" => $items[$itemId]['price'],
-        "type" => $items[$itemId]['type']
-    );
-}
-}
+$shoppingCartInfo = getShoppingCartInfo($_SESSION['userData']['user_id'], $db);
 //var_dump($shoppingCartInfo);
 if (isset($shoppingCartInfo)){
   $cart = buildShoppingCart($shoppingCartInfo);  
 }
-}
+
 //echo $shoppingCartInfo[0]['name'];
 //var_dump($shoppingCartInfo);
  include "views/cart.php";
