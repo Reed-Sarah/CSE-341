@@ -130,7 +130,7 @@ case 'add':
           $addOutcome = addProduct($name, $description, $path, $price, $type, $db);
           
           // Check and report the result
-          if($regOutcome === 1){
+          if($addOutcome === 1){
             $message = "<p>Success! $name  was added to inventory.</p>";
             include 'views/add-product.php';
             exit;
