@@ -41,7 +41,7 @@ function getProductsByType($type) {
          // and tells the database the type of data it is
          $stmt->bindValue(':name', $name, PDO::PARAM_STR);
          $stmt->bindValue(':description', $description, PDO::PARAM_STR);
-         $stmt->bindValue(':price', $price, PDO::PARAM_FLOAT);
+         $stmt->bindValue(':price', $price, PDO::PARAM_STR);
          $stmt->bindValue(':type', $type, PDO::PARAM_STR);
          $stmt->bindValue(':path', $path, PDO::PARAM_STR);
          // Insert the data
