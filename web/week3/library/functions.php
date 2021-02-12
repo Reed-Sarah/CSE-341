@@ -58,6 +58,8 @@ function buildItemsList($items){
        
    }
 
+   
+
    function buildPurchasedItems($itemsInfo){
     $l = '<ul id="purchased-items">';
     $total = 0;

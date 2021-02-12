@@ -106,6 +106,10 @@ foreach ($_SESSION['cart'] as $itemId)
         $itemsList = buildItemsList($products);
         include "views/browseItems.php";
 break;
+case 'addProduct':
+    $itemId = filter_input(INPUT_GET, 'itemId', FILTER_SANITIZE_NUMBER_INT);
+    $productInfo = getProductInfo($itemId, $db);
+    include "views/add-product.php";
 case 'updateProducts':
     $products = getAllProducts($db);
 $productUpdateList = buildProductsList($products);
@@ -121,12 +125,33 @@ exit;
             header('location: /week3/index.php?action=updateProducts');
             exit;
           } else {
-            $message = "<p>The deletion of $invMake $invModel failed.</p>";
+            $message = "<p>The deletion failed.</p>";
             $_SESSION['message'] = $message;
             header('location: /week3/index.php?action=updateProducts');
             exit;
           }	
 break;
+case 'editProduct':
+    {
+        $itemId = filter_input(INPUT_GET, 'itemId', FILTER_SANITIZE_NUMBER_INT);
+        $productInfo = getProductInfo($itemId, $db);
+        include "views/edit-product.php";
+    }
+case 'edit':
+    $itemId = filter_input(INPUT_GET, 'itemId', FILTER_SANITIZE_NUMBER_INT);
+        $updateResult = updateProduct($itemId, $db);
+        if ($updateResult) {
+            $message = "<p>Congratulations, item was successfully updated.</p>";
+            $_SESSION['message'] = $message;
+            header('location: /week3/index.php?action=updateProducts');
+            exit;
+          } else {
+            $message = "<p>The deletion failed.</p>";
+            $_SESSION['message'] = $message;
+            header('location: /week3/index.php?action=updateProducts');
+            exit;
+          }	
+          break;
     default:
     
    $products = getAllProducts($db);

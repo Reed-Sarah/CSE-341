@@ -21,6 +21,16 @@ function getProductsByType($type) {
         return $products; 
     }
 
+    function getProductsById($itemId, $db) {
+        $sql = 'SELECT * FROM products WHERE product_id = :itemId'; 
+            $stmt = $db->prepare($sql); 
+            $stmt->bindValue(':itemId', $itemId, PDO::PARAM_STR); 
+            $stmt->execute(); 
+            $products = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+            $stmt->closeCursor(); 
+            return $products; 
+        }
+
     function deleteProduct($itemId, $db) {
        // The SQL statement
     $sql = 'DELETE FROM products WHERE product_id = :itemId';
