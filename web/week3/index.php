@@ -118,12 +118,13 @@ case 'add':
           $type = filter_input(INPUT_POST, 'type', FILTER_SANITIZE_NUMBER_INT);
           
           
-          //Check for missing data
-        //   if(empty($name) || empty($description) || empty($path) || empty($price) ||empty($type)){
-        //     $message = '<p>*Please provide information for all empty form fields.</p>';
-        //     include 'views/add-product.php';
-        //     exit; 
-        //    }
+         // Check for missing data
+          if(empty($name) || empty($description) || empty($path) || empty($price) ||empty($type)){
+            $message = '<p>*Please provide information for all empty form fields.</p>';
+            echo $name . $description . $path . $price . $type;
+            include 'views/add-product.php';
+            exit; 
+           }
           
            // Send the data to the model
           $addOutcome = addProduct($name, $description, $path, $price, $type, $db);
