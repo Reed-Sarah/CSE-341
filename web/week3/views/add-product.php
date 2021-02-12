@@ -37,6 +37,7 @@ if (isset($message)) {
                 <option value="bottom">Bottom</option>
                 <option value="dress">Dress</option>
                 <option disable default value="top">Select Type</option>
+</select>
             <!-- <input type="radio" id="top" name="type" value="top">
            <label for="top">Top</label><br>
            <input type="radio" id="bottom" name="type" value="bottom">
