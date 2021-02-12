@@ -54,9 +54,9 @@ function getProductsByType($type) {
          return $rowsChanged; 
          }
 
-         function updateProduct($name, $description, $path, $price, $type, $itemId, $db) {
+         function updateProduct($name, $description, $price, $type, $itemId, $db) {
             // The SQL statement
-         $sql = 'UPDATE products SET name = :name, description = :description, price = :price, type = :type, picture_path = :path WHERE product_id = :itemId';
+         $sql = 'UPDATE products SET name = :name, description = :description, price = :price, type = :type WHERE product_id = :itemId';
          // Create the prepared statement using the connection
          $stmt = $db->prepare($sql);
          // The next four lines replace the placeholders in the SQL
@@ -66,7 +66,7 @@ function getProductsByType($type) {
          $stmt->bindValue(':description', $description, PDO::PARAM_STR);
          $stmt->bindValue(':price', $price, PDO::PARAM_STR);
          $stmt->bindValue(':type', $type, PDO::PARAM_STR);
-         $stmt->bindValue(':path', $path, PDO::PARAM_STR);
+         //$stmt->bindValue(':path', $path, PDO::PARAM_STR);
          $stmt->bindValue(':itemId', $itemId, PDO::PARAM_INT);
          // Insert the data
          $stmt->execute();
