@@ -37,6 +37,8 @@ if (isset($message)) {
 </select>
             <button type="submit">Submit</button>
             <input type="hidden" name="action" value="edit">
+            <input type="hidden" name="itemId" value="<?php if(isset($productInfo['product_id'])){ echo $productInfo['product_id'];} 
+elseif(isset($itemId)){ echo $itemId; } ?>">
 </form>
 </div>
 </main>

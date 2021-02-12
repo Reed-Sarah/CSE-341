@@ -186,7 +186,7 @@ case 'edit':
             header('location: /week3/index.php?action=updateProducts');
             exit;
           } else {
-            $message = "<p>The deletion failed.</p>";
+            $message = "<p>The update failed.</p>";
             $_SESSION['message'] = $message;
             header('location: /week3/index.php?action=updateProducts');
             exit;
