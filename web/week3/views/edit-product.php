@@ -10,17 +10,34 @@
     <link rel="stylesheet" href="css/styles.css" media="screen">
 </head>
 <body>
-    <div class="content">
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/header.php'; ?>
-    <div class="BFLinks"><a href="index.php">&#xab; Back to Browsing</a></div>
+<main>
+    <h1> Add Product  </h1>
+    <div class="outline">
     <?php
-if (isset($_SESSION['message'])) {
-        echo $_SESSION['message'];
-       }
+if (isset($message)) {
+ echo $message;
+}
 ?>
-   <?php echo $productUpdateList?>
-   <div class="push"></div>
+    <form method="post" action="/week3/index.php">
+        <h4 class="formHeader"> Product Details </h4>
+    <label>Product Name:</label><br>
+            <input required <?php if(isset($name)){echo "value='$name'";}  elseif(isset($productInfo['name'])) {echo "value='$productInfo[name]'";} ?> type="text" name="name" placeholder="i.e Rust Pants" ><br>
+            <label>Product Description:</label><br>
+            <textarea  required  name="description" placeholder=" Write description here..." ><?php if(isset($description)){echo "$description";}  elseif(isset($productInfo['description'])) {echo "value='$productInfo[description]'";} ?></textarea><br>
+            <label>Product Price:</label><br>
+            <input required <?php if(isset($price)){echo "value='$price'";}  elseif(isset($productInfo['price'])) {echo "value='$productInfo[price]'";} ?>  type="number" step="any" name="price" placeholder="i.e 13.23" ><br>
+            <label>Product Type:</label><br>
+            <select required name='type'>
+                <option disabled value="top">Select Type:</option>
+                <option value="top">Top</option>
+                <option value="bottom">Bottom</option>
+                <option value="dress">Dress</option>
+</select>
+            <button type="submit">Submit</button>
+            <input type="hidden" name="action" value="add">
+</form>
 </div>
+</main>
    <?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/footer.php'; ?> 
 
 </body>

@@ -33,17 +33,12 @@ if (isset($message)) {
             <input required <?php if(isset($price)){echo "value='$price'";}  ?>  type="number" step="any" name="price" placeholder="i.e 13.23" ><br>
             <label>Product Type:</label><br>
             <select required name='type'>
-                <option disable value="top">Select Type</option>
+                <option disabled value="top">Select Type:</option>
                 <option value="top">Top</option>
                 <option value="bottom">Bottom</option>
                 <option value="dress">Dress</option>
 </select>
-            <!-- <input type="radio" id="top" name="type" value="top">
-           <label for="top">Top</label><br>
-           <input type="radio" id="bottom" name="type" value="bottom">
-           <label for="bottom">Bottom</label><br>
-           <input type="radio" id="dress" name="type" value="dress">
-           <label for="dress">Dress</label><br> -->
+            
 
             <button type="submit">Submit</button>
             <input type="hidden" name="action" value="add">
