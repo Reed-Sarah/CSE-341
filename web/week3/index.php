@@ -108,6 +108,37 @@ foreach ($_SESSION['cart'] as $itemId)
 break;
 case 'addProduct':
     include "views/add-product.php";
+    exit;
+    break;
+case 'add':
+        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+          $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
+          $path = "week3/images/no-image.png"; //filter_input(INPUT_POST, 'invImage');
+          $price = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+          $type = filter_input(INPUT_POST, 'type', FILTER_SANITIZE_NUMBER_INT);
+          
+          
+          //Check for missing data
+          if(empty($name) || empty($description) || empty($path) || empty($price) ||empty($type) || empty($invPrice)){
+            $message = '<p>*Please provide information for all empty form fields.</p>';
+            include '../view/add-product.php';
+            exit; 
+           }
+          
+           // Send the data to the model
+          $addOutcome = addProduct($name, $description, $path, $price, $type, $db);
+          
+          // Check and report the result
+          if($regOutcome === 1){
+            $message = "<p>Success! $name  was added to inventory.</p>";
+            include '../view/add-product.php';
+            exit;
+           } else {
+            $message = "<p>Sorry $name was not added to Inventory. Please try again.</p>";
+            include '../view/add-product.php';
+            exit;
+           }
+               break;
 case 'updateProducts':
     $products = getAllProducts($db);
 $productUpdateList = buildProductsList($products);
