@@ -31,10 +31,10 @@ function buildItemsList($items){
     $l = '<ul id="shopping-cart">';
     foreach ($shoppingCartInfo as $item) {
      $l .= "<li>";
-     $l .= "<img src='$item[path]'>";
+     $l .= "<img src='$item[picture_path]'>";
      $l .= "<div class='item-specs'><h2>$item[name]</h2>";
      $l .= "<h3>$$item[price]</h3></div>";
-     $l .= "<a href='index.php?action=remove&itemId=" . urlencode($item['id'])."'>Remove from cart</a>";
+     $l .= "<a href='index.php?action=remove&itemId=" . urlencode($item['product_id'])."'>Remove from cart</a>";
      $l .= "</li>";
     }
     $l .= '</ul>';
