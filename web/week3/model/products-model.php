@@ -47,6 +47,17 @@ function getProductsByType($type) {
             return $rowsChanged; 
         }
 
+       function removeFromCart($itemId, $user_id, $db){
+    $sql = 'DELETE FROM shopping_carts WHERE product_id = :itemId AND user_id = :user_id';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':itemId', $itemId, PDO::PARAM_INT);
+    $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+    $stmt->execute();
+    $rowsChanged = $stmt->rowCount();
+    $stmt->closeCursor();
+    return $rowsChanged;
+       }
+
         function getShoppingCartInfo($user_id, $db) {
             $sql = 'SELECT * FROM shopping_carts c JOIN products p USING (product_id) WHERE c.user_id = :user_id'; 
             $stmt = $db->prepare($sql); 

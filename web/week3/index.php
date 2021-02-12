@@ -47,29 +47,19 @@ break;
 
 case 'remove';
 $itemId = filter_input(INPUT_GET, 'itemId', FILTER_SANITIZE_NUMBER_INT);
-$length = count($_SESSION['cart'], 0);
-$i = (int)0;
-echo "before";
-var_dump($_SESSION['cart']);
+$removeOutcome = removeFromCart($itemId, $db);
+if($addOutcome === 1){
+    $message = "<p>Success! Item removed from cart</p>";
+    include 'views/cart.php';
+    exit;
+   } else {
+    $message = "<p>Sorry item was not removed. Please try again.</p>";
+    include 'views/cart.php';
+    exit;
+   }
+      
+//header('location: index.php?action=shoppingCart');
 
-while ($i < $length):
-  // echo "removing" . $_SESSION['cart'][1];
- 
-     if ($_SESSION['cart'][$i] == $itemId) {
-        $_SESSION['cart'][$i] = null;
-        echo $i;
-    }
-    else {
-        $i++;
-    } 
-
-
-endwhile;
-echo "after";
-var_dump($_SESSION['cart']);
-
-header('location: index.php?action=shoppingCart');
-//echo "removing" . $itemId;
 break;
 
 case "checkout":
