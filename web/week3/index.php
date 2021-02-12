@@ -168,6 +168,8 @@ case 'editProduct':
         var_dump($productInfo);
         include "views/edit-product.php";
     }
+    exit;
+    break;
 case 'edit':
     $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
           $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
