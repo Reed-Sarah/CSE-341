@@ -30,10 +30,10 @@ if (isset($message)) {
             <input required <?php if(isset($price)){echo "value='$price'";}  elseif(isset($productInfo['price'])) {echo "value='$productInfo[price]'";} ?>  type="number" step="any" name="price" placeholder="i.e 13.23" ><br>
             <label>Product Type:</label><br>
             <select required name='type'>
-                <option disabled value="top">Select Type:</option>
-                <option <?php if(isset($type) && $type == "top"){echo "selected";}  elseif(isset($productInfo['type']) && $type == "top") {echo "selected";} ?> value="top">Top</option>
-                <option <?php if(isset($type) && $type == "bottom"){echo "selected";}  elseif(isset($productInfo['type']) && $type == "bottom") {echo "selected";} ?> value="bottom">Bottom</option>
-                <option <?php if(isset($type) && $type == "dress"){echo "selected";}  elseif(isset($productInfo['type']) && $type == "dress") {echo "selected";} ?> value="dress">Dress</option>
+                <option selected disabled value="top">Select Type:</option>
+                <option <?php if(isset($type) && $type == "top"){echo "selected";}  elseif(isset($productInfo['type']) && $productInfo['type'] == "top") {echo "selected";} ?> value="top">Top</option>
+                <option <?php if(isset($type) && $type == "bottom"){echo "selected";}  elseif(isset($productInfo['type']) && $productInfo['type'] == "bottom") {echo "selected";} ?> value="bottom">Bottom</option>
+                <option <?php if(isset($type) && $type == "dress"){echo "selected";}  elseif(isset($productInfo['type']) && $productInfo['type'] == "dress") {echo "selected";} ?> value="dress">Dress</option>
 </select>
             <button type="submit">Submit</button>
             <input type="hidden" name="action" value="edit">
