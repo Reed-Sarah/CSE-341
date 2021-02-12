@@ -2,10 +2,11 @@
 if (!isset($_SESSION['loggedin'])) {
     header('location: /week3/');
     exit;
+}
     if (isset($_SESSION['message'])) {
         $message = $_SESSION['message'];
        }
-   }?><!DOCTYPE html>
+   ?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

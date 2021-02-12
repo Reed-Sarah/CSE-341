@@ -1,6 +1,7 @@
 <?php 
-if (isset($_SESSION['loggedin']) === False || $_SESSION['userData']['is_admin']) {
-    header('Location: /week3/');
+if (!isset($_SESSION['loggedin'])) {
+    header('location: /week3/');
+    exit;
 }
 ?><!DOCTYPE html>
 <html lang="en">
