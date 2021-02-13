@@ -11,8 +11,9 @@
 </head>
 <body>
 <main>
-    <h1> Edit Product  </h1>
-    <div class="outline">
+    <div class="center">
+    <h2> Edit Product  </h2>
+    
     <?php
 if (isset($message)) {
  echo $message;
@@ -21,7 +22,7 @@ if (isset($message)) {
 ?>
 
     <form method="post" action="/week3/index.php">
-        <h4 class="formHeader"> Product Details </h4>
+        <h3 class="formHeader"> Product Details </h3>
     <label>Product Name:</label><br>
             <input required <?php if(isset($name)){echo "value='$name'";}  elseif(isset($productInfo['name'])) {echo "value='$productInfo[name]'";} ?> type="text" name="name" placeholder="i.e Rust Pants" ><br>
             <label>Product Description:</label><br>

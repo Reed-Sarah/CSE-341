@@ -20,8 +20,8 @@ if (!isset($_SESSION['loggedin'])) {
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/header.php'; ?> 
 
 <main>
-    <h1>Update Account Info</h1>
-    <div class="formFields">
+    <h2>Update Account Info</h2>
+    <div class="center">
     <?php
 if (isset($message)) { 
     echo $message; 
@@ -42,7 +42,7 @@ if (isset($message)) {
     </form>
     </div>
     <h1>Change Password</h1>
-    <div class="formFields">
+    <div class="center">
     <?php
 if (isset($message)) { 
     echo $message; 

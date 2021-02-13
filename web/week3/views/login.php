@@ -12,9 +12,9 @@
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/header.php'; ?> 
 
 <main>
-    
+    <div class="center">
         <form method="post" action="/week3/accounts/">
-         <h1>Login</h1>
+         <h2>Login</h2>
          <div class="formFields">
          <?php
 if (isset($_SESSION['message'])) {
@@ -37,7 +37,7 @@ if (isset($_SESSION['message'])) {
 
         </form>
 
-        
+</div>     
 </main>
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/footer.php'; ?> 
 </body>

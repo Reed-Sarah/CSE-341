@@ -12,8 +12,9 @@
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/header.php'; ?> 
 
 <main>
-    <h1>Register</h1>
-    <div class="formFields">
+    <div class="center">
+    <h2>Register</h2>
+    
     
 
     <?php

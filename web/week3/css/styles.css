@@ -65,7 +65,13 @@ ul {
       color: #f4efea;
       padding: 1em;
       z-index: 0;
-      box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
+      box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+      justify-content: space-between;
+      
+  }
+
+  nav ul {
+      width: 80%;
   }
 
   nav a {
@@ -257,11 +263,14 @@ h2 {
 }
 
 footer a {
-    color: #3e5c73;
+    color: #f4efea;
    
 }
 
 footer {position: fixed;
     left: 0;
     bottom: 0;
+    background-color: #3e5c73;
+    padding: 3em;
+    text-align:center;
 }

@@ -16,13 +16,14 @@ if (!isset($_SESSION['loggedin'])) {
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/header.php'; ?> 
 
 <main>
-    <h1> Add Product  </h1>
-    <div class="outline">
+    <h2> Add Product  </h2>
+    <div class="center">
     <?php
 if (isset($message)) {
  echo $message;
 }
 ?>
+
     <form method="post" action="/week3/index.php">
         <h4 class="formHeader"> Product Details </h4>
     <label>Product Name:</label><br>
