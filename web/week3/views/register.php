@@ -24,7 +24,7 @@ if (isset($message)) {
 ?>
 
         <form method="post" action="/week3/accounts/index.php">
-       <p>All fields are required<p>     
+       <p>All fields are required</p>     
         <label>First Name:</label><br>
             <input required type="text" placeholder="First Name" name="first_name" id="fname" <?php if(isset($first_name)){echo "value='$first_name'";}  ?>><br>
             <label>Last Name:</label><br>

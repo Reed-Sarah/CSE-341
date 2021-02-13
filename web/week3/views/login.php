@@ -21,7 +21,7 @@ if (isset($_SESSION['message'])) {
        }
 ?>
         <form method="post" action="/week3/accounts/">
-         <p>All fields are required<p>   
+         <p>All fields are required</p>   
             <label>Email Address:</label><br>
             <input input required type="email" name="email" id="email" placeholder="Email Address"  <?php if(isset($email)){echo "value='$email'";} ?> ><br>
             <label>Password:</label><br>
