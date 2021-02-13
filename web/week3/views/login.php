@@ -13,15 +13,14 @@
 
 <main>
     <div class="center">
-        <form method="post" action="/week3/accounts/">
-         <h2>Login</h2>
+         <h2>Login</h2> 
          
          <?php
 if (isset($_SESSION['message'])) {
         echo $_SESSION['message'];
        }
 ?>
-       
+        <form method="post" action="/week3/accounts/">
          <p>All fields are required<p>   
             <label>Email Address:</label><br>
             <input input required type="email" name="email" id="email" placeholder="Email Address"  <?php if(isset($email)){echo "value='$email'";} ?> ><br>
