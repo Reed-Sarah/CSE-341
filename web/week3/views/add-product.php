@@ -38,7 +38,7 @@ if (isset($message)) {
                 <option value="top">Top</option>
                 <option value="bottom">Bottom</option>
                 <option value="dress">Dress</option>
-</select>
+</select><br>
             
 
             <button type="submit">Submit</button>

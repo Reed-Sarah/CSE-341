@@ -30,7 +30,6 @@ if (isset($message)) {
     <form method="post" action="/week3/accounts/index.php">
         <label>First Name:</label><br>
         <input required type="text" placeholder="First Name" name="first_name" value=<?php echo $_SESSION['userData']['first_name']; ?>><br>
-        <?php echo $_SESSION['userData']['first_name']; ?>
         <label>Last Name:</label><br>
         <input required type="text" placeholder="Last Name" name="last_name" value=<?php echo $_SESSION['userData']['last_name']; ?> ><br>
         <label>Email Address:</label><br>
