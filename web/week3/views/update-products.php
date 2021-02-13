@@ -18,7 +18,7 @@ if (isset($_SESSION['message'])) {
         echo $_SESSION['message'];
        }
 ?>
-<a class="button center" href="/week3/index.php?action=addProduct">Add Product</a>
+<a class="button center-btn" href="/week3/index.php?action=addProduct">Add Product</a>
    <?php echo $productUpdateList?>
    <div class="push"></div>
 </div>

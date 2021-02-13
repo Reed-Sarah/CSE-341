@@ -85,6 +85,10 @@ ul {
       color: white;
   }
 
+  .login {
+      float:right;
+  }
+
   .BFLinks a{
       padding: 1em .5em .5em .5em;
       font-size: 1.5em;
@@ -225,7 +229,7 @@ p {
     font-size: 110%;
 }
 
-input {
+input, textarea {
     font-size: 124%;
     width: 300px;
     margin-bottom: .5em;
@@ -262,15 +266,24 @@ h2 {
     margin: 1em auto;
 }
 
+.center-btn {
+    margin: 0 auto;
+    text-decoration: none;
+}
+
+.fine-text {
+    font-size: smaller;
+}
+
 footer a {
     color: #f4efea;
    
 }
 
-footer {position: fixed;
-    left: 0;
-    bottom: 0;
+footer {
+    margin-top: 2em;
     background-color: #3e5c73;
-    padding: 3em;
+    padding: 2em;
     text-align:center;
+    
 }

@@ -9,8 +9,10 @@
     <title>Sarah's Boutique</title>
     <link rel="stylesheet" href="css/styles.css" media="screen">
 </head>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/header.php'; ?>
 <body>
 <main>
+
     <div class="center">
     <h2> Edit Product  </h2>
     
@@ -35,7 +37,7 @@ if (isset($message)) {
                 <option <?php if(isset($type) && $type == "top"){echo "selected";}  elseif(isset($productInfo['type']) && $productInfo['type'] == "top") {echo "selected";} ?> value="top">Top</option>
                 <option <?php if(isset($type) && $type == "bottom"){echo "selected";}  elseif(isset($productInfo['type']) && $productInfo['type'] == "bottom") {echo "selected";} ?> value="bottom">Bottom</option>
                 <option <?php if(isset($type) && $type == "dress"){echo "selected";}  elseif(isset($productInfo['type']) && $productInfo['type'] == "dress") {echo "selected";} ?> value="dress">Dress</option>
-</select>
+</select><br>
             <button type="submit">Submit</button>
             <input type="hidden" name="action" value="edit">
             <input type="hidden" name="itemId" value="<?php if(isset($productInfo['product_id'])){ echo $productInfo['product_id'];} 
