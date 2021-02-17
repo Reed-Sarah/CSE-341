@@ -17,6 +17,7 @@ $action = filter_input(INPUT_POST, 'action');
         include 'signIn.php';
         break;
     case 'signIn':
+        echo "signing in ...";
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
         $userData = getUser($db, $username);
