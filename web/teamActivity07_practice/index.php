@@ -23,7 +23,7 @@ $action = filter_input(INPUT_POST, 'action');
         $verify = password_verify($password, $userData['password']);
 
         if(!$verify) {
-            $SESSION['message'] = '<p class="notice">Please check your password and try again.</p>';
+            $_SESSION['message'] = '<p class="notice">Please check your password and try again.</p>';
             include 'signIn.php';
             exit;
           }
