@@ -18,7 +18,7 @@ $action = filter_input(INPUT_POST, 'action');
         if ($password != $password2){
             $mark = "<span class='notice'>*<span>";
             $_SESSION['message'] = '<p class="notice">Passwords do not match</p>';
-            include 'signIn.php';
+            include 'signUp.php';
             exit;
         }
         $pattern = "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,}$";
