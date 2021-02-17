@@ -1,5 +1,7 @@
 <?php
-include_once "model/products-model.php";
+session_start();
+include_once "connection.php";
+include_once "model.php";
 $db = connectDB();
 
 $action = filter_input(INPUT_POST, 'action');
