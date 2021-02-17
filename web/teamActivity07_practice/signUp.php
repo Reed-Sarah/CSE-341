@@ -3,7 +3,7 @@
 <label>Username:</label><br>
 <input required name="username" type=text><br>
 <label>Password:</label><br>
-<input required name="password" type="password" pattern="/^(?=.*[0-9])\${7,}$/"><br>
+<input required name="password" type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"><br>
 <button type="submit">Sign Up</button>
 <input type="hidden" name="action" value="signUp">
 </form>
