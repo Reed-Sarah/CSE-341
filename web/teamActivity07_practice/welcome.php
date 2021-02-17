@@ -4,5 +4,4 @@ session_start();
 //     header('location: index.php');
 //     exit;
 // }
-echo "<h1>Welcome ";
-var_dump($_SESSION);
+echo "<h1>Welcome $_SESSION[username]";
