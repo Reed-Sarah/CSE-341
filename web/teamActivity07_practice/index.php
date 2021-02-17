@@ -23,9 +23,10 @@ $action = filter_input(INPUT_POST, 'action');
         $verify = password_verify($password, $userData['password']);
 
         if(!$verify) {
-            echo "not verified";
+            
             $_SESSION['message'] = '<p class="notice">Please check your password and try again.</p>';
             include 'signIn.php';
+            echo "not verified";
             exit;
           }
 
