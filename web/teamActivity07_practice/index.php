@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once "connection.php";
 include_once "model.php";
 $db = connectDB();
@@ -17,17 +18,14 @@ $action = filter_input(INPUT_POST, 'action');
         include 'signIn.php';
         break;
     case 'signIn':
-        echo "signing in ...";
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
         $userData = getUser($db, $username);
         $verify = password_verify($password, $userData['password']);
 
         if(!$verify) {
-            
             $_SESSION['message'] = '<p class="notice">Please check your password and try again.</p>';
-           // include 'signIn.php';
-            echo "not verified";
+            include 'signIn.php';
             exit;
           }
 
