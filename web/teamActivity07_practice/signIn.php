@@ -1,4 +1,9 @@
 <h1>Sign In</h1>
+<?php
+if (isset($_SESSION['message'])) {
+        echo $_SESSION['message'];
+       }
+?>
 <form method="post" action="index.php">
 <label>Username:</label><br>
 <input name="username" type=text><br>

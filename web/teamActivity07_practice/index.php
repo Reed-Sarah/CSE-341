@@ -17,6 +17,20 @@ $action = filter_input(INPUT_POST, 'action');
         include 'signIn.php';
         break;
     case 'signIn':
+        $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+        $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+        $userData = getUser($db, $username);
+        $verify = password_verify($password, $userData['hashedPassword']);
+
+        if(!$verify) {
+            $SESSION['message'] = '<p class="notice">Please check your password and try again.</p>';
+            include 'signIn.php';
+            exit;
+          }
+
+          $_SESSION['username'] = $userData['username'];
+          header('location: welcome.php');
+
         break;
     default:
     include "signIn.php";
