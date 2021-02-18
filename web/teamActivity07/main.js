@@ -3,10 +3,10 @@ function hasNumber(password) {
   }
   
   function clientSideStretch3() {
-    password1 = document.querySelector('#password1');
-    password2 = document.querySelector('#password2');
+    password1 = document.querySelector('#password1').value;
+    password2 = document.querySelector('#password2').value;
   
-    msg = msg = document.querySelector('#error');
+    msg = document.querySelector('#error');
     if (password1 === password2) {
       //do something
     } else {
