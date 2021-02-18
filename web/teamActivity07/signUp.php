@@ -19,11 +19,11 @@ if (isset($_SESSION['message'])) {
 <label>Password:</label><br>
 <?php if (isset($mark)) {
         echo "<span class='notice'>*</span>";
-       }?><input name="password" type="password"><br>
+       }?><input name="password" type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,}$"><br>
 <label>Re-enter Password:</label><br>
 <?php if (isset($mark)) {
         echo "<span class='notice'>*</span>";
-       }?><input name="password2" type="password"><br>
+       }?><input name="password2" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,}$" type="password"><br>
 <button type="submit">Sign Up</button>
 <input type="hidden" name="action" value="signUp">
 </form>
