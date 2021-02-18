@@ -13,6 +13,11 @@ $action = filter_input(INPUT_POST, 'action');
      case 'signUp':
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+        $password2 = filter_input(INPUT_POST, 'password2', FILTER_SANITIZE_STRING);
+        if ($password != $password2){
+            $_SESSION['message'] = "Passwords don't match";
+            exit;
+        }
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $signUp = signUpUser($db, $username, $hashedPassword);
         header('Location: signIn.php');
