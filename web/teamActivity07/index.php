@@ -22,12 +22,15 @@ exit;
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
         $userData = getUser($db, $username);
-        if (password_verify($password, $userData)) {
+        if (password_verify($password, $userData['password'])) {
             echo 'Password is valid!';
             $_SESSION['username'] = $username;
             header('Location: welcome.php');
+            exit;
         } else {
             echo 'Invalid password.';
+            include 'signIn.php';
+            exit;
         }
         
         break;
