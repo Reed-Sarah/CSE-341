@@ -17,11 +17,11 @@ if (isset($_SESSION['message'])) {
 <label>Username:</label><br>
 <input name="username" type=text><br>
 <label>Password:</label><br>
-<?php if (isset($_SESSION['message'])) {
+<?php if (isset($mark)) {
         echo "<span class='notice'>*</span>";
        }?><input name="password" type="password"><br>
 <label>Re-enter Password:</label><br>
-<?php if (isset($_SESSION['message'])) {
+<?php if (isset($mark)) {
         echo "<span class='notice'>*</span>";
        }?><input name="password2" type="password"><br>
 <button type="submit">Sign Up</button>
