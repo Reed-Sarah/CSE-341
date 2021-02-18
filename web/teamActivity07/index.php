@@ -11,6 +11,12 @@ $action = filter_input(INPUT_POST, 'action');
 
  switch ($action) {
      case 'signUp':
+        $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+        $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+        $hashedPassword = password_hash($password);
+        $signUp = signUpUser($db, $username, $hashPassword);
+        header('Location: signIn.php');
+
         break;
     case 'signIn':
         break;
