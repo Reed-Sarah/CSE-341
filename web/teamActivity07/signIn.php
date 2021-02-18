@@ -22,5 +22,4 @@ if (isset($_SESSION['message'])) {
 <input type="hidden" name="action" value="signIn">
 </form>
 <a href="signUp.php">Don't have an account? Sign up Today!</a>
-</body></html><?php unset($_SESSION['message'])
-?>
+</body></html>
