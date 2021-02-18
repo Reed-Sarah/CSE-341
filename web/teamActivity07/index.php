@@ -16,6 +16,7 @@ $action = filter_input(INPUT_POST, 'action');
         $password2 = filter_input(INPUT_POST, 'password2', FILTER_SANITIZE_STRING);
         if ($password != $password2){
             $_SESSION['message'] = "Passwords don't match";
+            include "signUp.php";
             exit;
         }
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
