@@ -13,17 +13,18 @@ if (isset($_SESSION['message'])) {
         echo $_SESSION['message'];
        }
 ?>
-<form method="post" action="index.php">
+<div id="error"></div>
+<form onsubmit="return clientSideStretch3()" method="post" action="index.php">
 <label>Username:</label><br>
 <input name="username" type=text><br>
 <label>Password:</label><br>
 <?php if (isset($mark)) {
         echo "<span class='notice'>*</span>";
-       }?><input name="password" type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,}$"><br>
+       }?><input id="password1" name="password" type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,}$"><br>
 <label>Re-enter Password:</label><br>
 <?php if (isset($mark)) {
         echo "<span class='notice'>*</span>";
-       }?><input name="password2" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,}$" type="password"><br>
+       }?><input id="password2" name="password2" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,}$" type="password"><br>
 <button type="submit">Sign Up</button>
 <input type="hidden" name="action" value="signUp">
 </form>
