@@ -17,7 +17,8 @@ $action = filter_input(INPUT_POST, 'action');
         $pattern = "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,}$";
         if (!preg_match($pattern, $password)) {
             $_SESSION['message'] = "Password must contain 7 characters and number";
-            
+            include "signUp.php";
+            exit;
         }
         if ($password != $password2){
             $_SESSION['message'] = "<p class='notice'>Passwords don't match</p>";
