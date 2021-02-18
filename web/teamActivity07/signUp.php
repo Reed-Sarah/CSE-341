@@ -16,8 +16,8 @@ if (isset($_SESSION['message'])) {
 <form method="post" action="index.php">
 <label>Username:</label><br>
 <input name="username" type=text><br>
-<label>Password:</label>
-<input name="password" type="password">
+<label>Password:</label><br>
+<input name="password" type="password"><br>
 <button type="submit">Sign Up</button>
 <input type="hidden" name="action" value="signUp">
 </form>
