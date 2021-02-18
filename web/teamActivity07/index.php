@@ -14,7 +14,7 @@ $action = filter_input(INPUT_POST, 'action');
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
         $hashedPassword = password_hash($password);
-        $signUp = signUpUser($db, $username, $hashPassword);
+        $signUp = signUpUser($db, $username, $hashedPassword);
         header('Location: signIn.php');
 
         break;
