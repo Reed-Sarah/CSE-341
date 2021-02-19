@@ -15,7 +15,7 @@ $action = filter_input(INPUT_POST, 'action');
      case 'addToCart':
      $itemId = filter_input(INPUT_GET, 'itemId', FILTER_SANITIZE_NUMBER_INT);
      if (isset($_SESSION['userData']['user_id']) == false){
-        $SESSION['message'] = '<p class="notice">Please login to add items to your cart</p>';
+        $_SESSION['message'] = '<p class="notice">Please login to add items to your cart</p>';
         header('location: /week3/accounts/index.php?action=account'); 
         exit;
      }
@@ -35,7 +35,7 @@ $action = filter_input(INPUT_POST, 'action');
      case 'shoppingCart': 
 $shoppingCartInfo = getShoppingCartInfo($_SESSION['userData']['user_id'], $db);
 //var_dump($shoppingCartInfo);
-if ($shoppingCartInfo == ""){
+if ($shoppingCartInfo != ""){
   $cart = buildShoppingCart($shoppingCartInfo);  
 }
 
