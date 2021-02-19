@@ -17,8 +17,16 @@
 
 body {
     min-height: 100%;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+    display: flex;
+    flex-direction: column;
+}
+
+header, footer{
+    flex-shrink: 0;
+}
+
+main {
+    flex-grow: 1;
 }
 
 img {
