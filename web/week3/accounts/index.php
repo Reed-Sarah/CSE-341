@@ -58,7 +58,7 @@ array_pop($userData);
 $_SESSION['userData'] = $userData;
 // Send them to the home page
 //include '../../week3/';
-//header('location: /week3/');
+header('location: /week3/');
 exit;
      break;
      case 'createAccount':
