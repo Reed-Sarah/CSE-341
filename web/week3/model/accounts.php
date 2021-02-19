@@ -111,7 +111,7 @@ function getUserInfo($user_id, $db){
    }
 
    function saveAddress($addressLine1, $addressLine2, $city, $state, $zip, $country, $user_id, $db){
-    $sql = 'INSERT INTO addresses (addressLine1, addressLine2, city, state, zip, country, user_id)
+    $sql = 'INSERT INTO addresses (addressLine1, addressLine2, city, state, zip_code, country, user_id)
         VALUES (:addressLine1, :addressLine2, :city, :state, :zip, :country, :user_id)';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':addressLine1', $addressLine1, PDO::PARAM_STR);
