@@ -9,7 +9,7 @@ if(isset($_SESSION['loggedin']))
     } 
 }
 else {
-    echo " | <a class='account' href='/week3/accounts/index.php?action=account' title='Login Sarah's Boutique'>Login/Sign Up</a>";
+    echo " | <a class='account' href='/week3/accounts/index.php?action=account' title='Login Sarahs Boutique'>Login/Sign Up</a>";
 }
 
 ?>
