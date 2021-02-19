@@ -49,6 +49,7 @@ if(!$hashCheck) {
 }
 // A valid user exists, log them in
 $_SESSION['loggedin'] = TRUE;
+echo $_SESSION['loggedin'];
 // Remove the password from the array
 // the array_pop function removes the last
 // element from an array
@@ -57,7 +58,7 @@ array_pop($userData);
 $_SESSION['userData'] = $userData;
 // Send them to the home page
 //include '../../week3/';
-header('location: /week3/');
+//header('location: /week3/');
 exit;
      break;
      case 'createAccount':
