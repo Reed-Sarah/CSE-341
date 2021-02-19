@@ -223,14 +223,13 @@ button, .button {
 .item-specs {
     color: #3e5c73;
     text-align: center;
+    width: 400px;
+    padding-top: 3em;
 }
 
 #shopping-cart a {
     color:#3e5c73;
-}
-
-.item-specs, #shopping-cart a {
-    padding-top: 5em;
+    padding-top: 5.5em;
 }
 
 p {
