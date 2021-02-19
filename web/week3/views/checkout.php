@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+if (!isset($_SESSION['loggedin'])) {
+    header('location: /week3/');
+    exit;
+}
+   ?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
