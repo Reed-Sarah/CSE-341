@@ -49,7 +49,7 @@ if (isset($message)) {
 ?>
     <form method="post" action="/week3/accounts/index.php">
     <label>New Password:</label><br>
-            <span>This will change your existing password!<span><br> <span class="fine-text">Password must be at least 8 characters and contain at least 1 uppercase character, 1 number and 1 special character </span><br>
+            <span class="fine-text">Password must be at least 8 characters and contain at least 1 uppercase character, 1 number and 1 special character </span><br>
             <input required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" type="password" name="user_password" id="password" placeholder=Password><br>
             <button type="submit">Change Password</button>
             <input type="hidden" name="action" value="changePassword">
