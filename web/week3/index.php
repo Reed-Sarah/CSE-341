@@ -74,9 +74,10 @@ case "checkout":
         $zip = filter_input(INPUT_POST, 'zip', FILTER_SANITIZE_STRING);
         $country = filter_input(INPUT_POST, 'country', FILTER_SANITIZE_STRING);
         
-        $itemsInfo = getShoppingCartInfo($_SESSION['userData']['user_id'], $db);
+        $purchasedItems = getShoppingCartInfo($_SESSION['userData']['user_id'], $db);
+        $removeItemsFromCart = removeItemsFromCart($_SESSION['userData']['user_id'], $db);
 
-  $purchasedItems = buildPurchasedItems($itemsInfo);  
+  $purchasedItems = buildPurchasedItems($purchasedItems);  
   $saveAddress = saveAddress($addressLine1, $addressLine2, $city, $state, $zip, $country, $_SESSION['userData']['user_id'], $db);
   $address = buildAddressDisplay();
 
