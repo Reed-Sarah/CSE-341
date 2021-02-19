@@ -29,5 +29,4 @@ if (isset($_SESSION['message'])) {
 <input type="hidden" name="action" value="signUp">
 </form>
 <script src="main.js"></script>
-</body></html><?php unset($_SESSION['message'])
-?>
+</body></html><?php unset($_SESSION['message'])?>

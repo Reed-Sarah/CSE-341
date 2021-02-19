@@ -25,4 +25,4 @@ if (isset($_SESSION['message'])) {
    <?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/footer.php'; ?> 
 
 </body>
-</html>
+</html><?php unset($_SESSION['message'])?>
