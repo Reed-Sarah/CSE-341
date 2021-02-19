@@ -67,7 +67,7 @@ function buildItemsList($items){
     foreach ($itemsInfo as $item) {
         $total += $item['price'];
      $l .= "<li>";
-     $l .= "<img src='$item[path]' alt='$item[description]'>";
+     $l .= "<img src='$item[picture_path]' alt='$item[description]'>";
      $l .= "<div class='item-specs'><h2>$item[name]</h2>";
      $l .= "<h3>$$item[price]</h3>";
      $l .= '</div></li>';
