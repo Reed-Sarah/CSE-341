@@ -109,4 +109,21 @@ function getUserInfo($user_id, $db){
     // Return the indication of success (rows changed)
     return $rowsChanged;
    }
+
+   function saveAddress($addressLine1, $addressLine2, $city, $state, $zip, $country, $user_id, $db){
+    $sql = 'INSERT INTO addresses (addressLine1, addressLine2, city, state, zip, country, user_id)
+        VALUES (:addressLine1, :addressLine,2 :city, :state, :zip, :country, :user_id)';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':addressLine1', $addressLine1, PDO::PARAM_STR);
+    $stmt->bindValue(':addressLine2', $addressLine2, PDO::PARAM_STR);
+    $stmt->bindValue(':city', $city, PDO::PARAM_STR);
+    $stmt->bindValue(':state', $state, PDO::PARAM_STR);
+    $stmt->bindValue(':zip', $zip, PDO::PARAM_STR);
+    $stmt->bindValue(':country', $country, PDO::PARAM_STR);
+    $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
+    $stmt->execute();
+    $rowsChanged = $stmt->rowCount();
+    $stmt->closeCursor();
+    return $rowsChanged;
+   }
    ?>

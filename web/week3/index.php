@@ -3,6 +3,7 @@ include_once "model/items.php";
 include_once "library/functions.php";
 include_once "library/connection.php";
 include_once "model/products-model.php";
+include_once "model/accounts.php";
 
 $db = connectDB();
 
@@ -34,13 +35,11 @@ $action = filter_input(INPUT_POST, 'action');
                break;
      case 'shoppingCart': 
 $shoppingCartInfo = getShoppingCartInfo($_SESSION['userData']['user_id'], $db);
-var_dump($shoppingCartInfo);
+
 if ($shoppingCartInfo[0] != ""){
   $cart = buildShoppingCart($shoppingCartInfo);  
 }
 
-//echo $shoppingCartInfo[0]['name'];
-//var_dump($shoppingCartInfo);
  include "views/cart.php";
  exit;
 break;
@@ -63,27 +62,26 @@ if($addOutcome === 1){
 break;
 
 case "checkout":
+
     include "views/checkout.php";
     break;
 
     case "confirmation":
-foreach ($_SESSION['cart'] as $itemId)
-{
-    if ($itemId !== null)
-    {
-    $itemsInfo[] = array (
-        "id" => $items[$itemId]['id'],
-        "name" => $items[$itemId]['name'],
-        "path" => $items[$itemId]['path'],
-        "price" => $items[$itemId]['price'],
-        "type" => $items[$itemId]['type']
-    );
-}
-}
+        $addressLine1 = filter_input(INPUT_POST, 'addressLine1', FILTER_SANITIZE_STRING);
+        $addressLine2 = filter_input(INPUT_POST, 'addressLine2', FILTER_SANITIZE_STRING);
+        $city = filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING);
+        $state = filter_input(INPUT_POST, 'state', FILTER_SANITIZE_STRING);
+        $zip = filter_input(INPUT_POST, 'zip', FILTER_SANITIZE_STRING);
+        $country = filter_input(INPUT_POST, 'country', FILTER_SANITIZE_STRING);
+        
+        $itemsInfo = getShoppingCartInfo($_SESSION['userData']['user_id'], $db);
+
   $purchasedItems = buildPurchasedItems($itemsInfo);  
+  $saveAddress = saveAddress($addressLine1, $addressLine2, $city, $state, $zip, $country, $_SESSION['userData']['user_id'], $db);
   $address = buildAddressDisplay();
 
         include "views/confirmation.php";
+        exit();
         break;
     case "filter":
         $type = filter_input(INPUT_GET, 'type', FILTER_SANITIZE_STRING);

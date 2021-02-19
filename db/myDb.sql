@@ -12,7 +12,8 @@ CREATE TABLE users (
 CREATE TABLE addresses (
   address_id SERIAL PRIMARY KEY,
   user_id int NOT NULL REFERENCES users (user_id),
-  street VARCHAR(255),
+  addressLine1 VARCHAR(255),
+  addressLine2 VARCHAR(255),
   country VARCHAR(255),
   state VARCHAR(255),
   city VARCHAR(255),
