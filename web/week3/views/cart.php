@@ -1,6 +1,7 @@
 <?php
 if (!isset($_SESSION['loggedin'])) {
-    header('location: /week3/');
+    $_SESSION['message'] = '<p class="notice">You must login to view your cart</p>';
+        header('location: /week3/accounts/index.php?action=account');
     exit;
 }
    ?><!DOCTYPE html>
