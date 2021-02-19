@@ -13,8 +13,9 @@
     <div class="BFLinks"><a href="index.php">&#xab; Back to Browsing</a></div>
    <?php if (isset($cart)) {echo $cart; echo "<div class='alignR'><div class='button right-btn'><a href='index.php?action=checkout'>Proceed to Checkout</a></div></div>";} else {echo "<p>You don't have any items in your cart right now would you like to go  <a href='index.php'>Back to Browsing</a></p";} ?>
    <div class="push"></div>
+ </main>  
 </div>
-</main>
+
    <?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/footer.php'; ?> 
 </body>
 </html>
