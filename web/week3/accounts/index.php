@@ -27,11 +27,11 @@ $action = filter_input(INPUT_POST, 'action');
       $email = checkEmail($email);
       $checkPassword = checkPassword($user_password);
      
-      // if(empty($email) || empty($checkPassword)){
-      //   $_SESSION["message"] = '<p>Missing or invalid email or password, please try again.</p>';
-      //   include '../views/login.php';
-      //   exit; 
-      //  }
+      if(empty($email) || empty($checkPassword)){
+        $_SESSION["message"] = '<p>Missing or invalid email or password, please try again.</p>';
+        include '../views/login.php';
+        exit; 
+       }
 
        // A valid password exists, proceed with the login process
 // Query the user data based on the email address
@@ -49,21 +49,16 @@ if(!$hashCheck) {
 }
 // A valid user exists, log them in
 $_SESSION['loggedin'] = TRUE;
-
-
 // Remove the password from the array
 // the array_pop function removes the last
 // element from an array
 array_pop($userData);
 // Store the array into the session
 $_SESSION['userData'] = $userData;
-
-
 // Send them to the home page
 //include '../../week3/';
 header('location: /week3/');
 exit;
-      
      break;
      case 'createAccount':
       $first_name = filter_input(INPUT_POST, 'first_name', FILTER_SANITIZE_STRING);
@@ -82,8 +77,6 @@ if($existingEmail){
  include '../views/login.php';
  exit;
 }
-
-
 // Check for missing data
 if(empty($first_name) || empty($last_name) || empty($email) || empty($checkPassword)){
   $message = '<p>*Please provide information for all empty form fields.</p>';
@@ -177,7 +170,7 @@ if($regOutcome === 1){
         exit; 
        }
        $hashedPassword = password_hash($user_password, PASSWORD_DEFAULT);
-       $changePassword = changePassword($hashedPassword, $user_id);
+       $changePassword = changePassword($hashedPassword, $user_id, $db);
 
 // Check and report the result
 if($changePassword === 1){
