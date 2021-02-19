@@ -43,7 +43,7 @@ $hashCheck = password_verify($user_password, $userData['user_password']);
 // If the hashes don't match create an error
 // and return to the login view
 if(!$hashCheck) {
-  $SESSION['message'] = '<p class="notice">Please check your password and try again.</p>';
+  $_SESSION['message'] = '<p class="notice">Please check your password and try again.</p>';
   include '../views/login.php';
   exit;
 }
