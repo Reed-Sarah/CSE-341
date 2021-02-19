@@ -33,4 +33,6 @@ if (isset($_SESSION['message'])) {
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/footer.php'; ?> 
 </body>
 
-</html><?php unset($_SESSION['message'])?>
+</html><?php if (isset($_SESSION['message'])) {
+        unset($_SESSION['message']);
+       } ?>

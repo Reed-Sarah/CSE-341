@@ -1,5 +1,5 @@
 <?php
-include_once "model/items.php";
+session_start();
 include_once "library/functions.php";
 include_once "library/connection.php";
 include_once "model/products-model.php";

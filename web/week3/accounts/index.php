@@ -107,7 +107,6 @@ if($regOutcome === 1){
      case 'Logout':
       session_destroy(); 
       header('Location: /week3/');
-
       exit;
     break;
     case 'accountUpdate':
