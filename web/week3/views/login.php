@@ -23,7 +23,7 @@ if (isset($_SESSION['message'])) {
         <form method="post" action="/week3/accounts/">
          <p>All fields are required</p>   
             <label>Email Address:</label><br>
-            <input input required type="email" name="email" id="email" placeholder="Email Address"  <?php if(isset($email)){echo "value='$email'";} ?> ><br>
+            <input required type="email" name="email" id="email" placeholder="Email Address"  <?php if(isset($email)){echo "value='$email'";} ?> ><br>
             <label>Password:</label><br>
             <input required name="user_password" type="password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder=Password>
             <button>Login</button> 

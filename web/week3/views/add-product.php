@@ -34,7 +34,7 @@ if (isset($message)) {
             <input required <?php if(isset($price)){echo "value='$price'";}  ?>  type="number" step="any" name="price" placeholder="i.e 13.23" ><br>
             <label>Product Type:</label><br>
             <select required name='type'>
-                <option disabled value="top">Select Type:</option>
+                <option disabled value="">Select Type:</option>
                 <option value="top">Top</option>
                 <option value="bottom">Bottom</option>
                 <option value="dress">Dress</option>
