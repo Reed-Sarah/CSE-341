@@ -8,6 +8,7 @@
 </head>
 <body>
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/header.php'; ?>
+<main>
 <div class="BFLinks "> <a  href="index.php?action=shoppingCart">&#xab; Back to Shopping Cart</a> </div>
 
 <div class="center">
@@ -29,6 +30,7 @@
    <button class="right-btn" type="submit">Checkout</button>
    </form>
 </div>
+</main>
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/footer.php'; ?> 
 
 </body>

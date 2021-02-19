@@ -8,6 +8,7 @@
 </head>
 <body>
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/header.php'; ?>
+<main>
 <div class="BFLinks"><a href="index.php">&#xab; Back to Browsing</a></div>
 
    <h2> Thank you for your purchase!</h2>
@@ -15,7 +16,7 @@
 
    
    <?php echo $address ?>
-   
+</main>
    <?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/footer.php'; ?> 
 
 </body>

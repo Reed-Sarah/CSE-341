@@ -9,7 +9,7 @@
 <body>
     <div class="content">
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/header.php'; ?> 
-
+<main>
    <div class="BFLinks FLinks"> <a  href="index.php?action=shoppingCart">Shopping Cart &#xbb;</a> </div>
    <?php
 if (isset($_SESSION['message'])) {
@@ -18,6 +18,7 @@ if (isset($_SESSION['message'])) {
 ?>
    <?php echo $itemsList; ?>
 </div>
+      </main>
    <?php require $_SERVER['DOCUMENT_ROOT'] . '/week3/snippets/footer.php'; ?> 
 
 </body>
