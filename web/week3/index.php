@@ -34,7 +34,7 @@ $action = filter_input(INPUT_POST, 'action');
                break;
      case 'shoppingCart': 
 $shoppingCartInfo = getShoppingCartInfo($_SESSION['userData']['user_id'], $db);
-//var_dump($shoppingCartInfo);
+var_dump($shoppingCartInfo);
 if ($shoppingCartInfo != ""){
   $cart = buildShoppingCart($shoppingCartInfo);  
 }
