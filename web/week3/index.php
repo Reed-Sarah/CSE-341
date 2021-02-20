@@ -15,7 +15,6 @@ $action = filter_input(INPUT_POST, 'action');
  switch ($action) {
      case 'addToCart':
      $itemId = filter_input(INPUT_GET, 'itemId', FILTER_SANITIZE_NUMBER_INT);
-     $type = filter_input(INPUT_GET, 'type', FILTER_SANITIZE_STRING);
      if (isset($_SESSION['userData']['user_id']) == false){
         $_SESSION['message'] = '<p class="notice">Please login to add items to your cart</p>';
         header('location: /week3/accounts/index.php?action=account'); 
@@ -26,19 +25,14 @@ $action = filter_input(INPUT_POST, 'action');
     // Check and report the result
           if($addToCartOutcome === 1){
             $_SESSION['message'] = "<p>Item was added to your cart</p>";
+            //header('location: /week3/');
+            header ('location:'. urlencode($_SERVER['HTTP_REFERER']));
             exit;
            } else {
             $_SESSION['message'] = "<p>Sorry item was not added to your cart. Please try again.</p>";
             header('location: /week3/');
             exit;
            }
-
-           if ($type != ""){
-                header('location: /week3/index.php?action=filter&type=' . urlencode($type));
-                exit;
-           }
-           header('location: /week3/');
-           exit;
                break;
      case 'shoppingCart': 
 $shoppingCartInfo = getShoppingCartInfo($_SESSION['userData']['user_id'], $db);
