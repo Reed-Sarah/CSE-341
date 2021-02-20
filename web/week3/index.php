@@ -25,11 +25,11 @@ $action = filter_input(INPUT_POST, 'action');
     // Check and report the result
           if($addToCartOutcome === 1){
             $_SESSION['message'] = "<p>Item was added to your cart</p>";
-            include '/week3/';
+            include 'index.php';
             exit;
            } else {
             $_SESSION['message'] = "<p>Sorry item was not added to your cart. Please try again.</p>";
-            include '/week3/';
+            include 'index.php';
             exit;
            }
                break;
