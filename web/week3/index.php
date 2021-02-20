@@ -26,7 +26,7 @@ $action = filter_input(INPUT_POST, 'action');
           if($addToCartOutcome === 1){
             $_SESSION['message'] = "<p>Item was added to your cart</p>";
             //header('location: /week3/');
-            header ('location:'. urlencode($_SERVER['HTTP_REFERER']));
+            header("Location: {$_SERVER[HTTP_REFERER]}");
             exit;
            } else {
             $_SESSION['message'] = "<p>Sorry item was not added to your cart. Please try again.</p>";
