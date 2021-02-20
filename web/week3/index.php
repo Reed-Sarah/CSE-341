@@ -123,7 +123,7 @@ case 'add':
             exit;
            } else {
             $message = "<p>Sorry $name was not added to Inventory. Please try again.</p>";
-            header ('location: index.php?action=addProduct')
+            header ('location: index.php?action=addProduct');
             exit;
            }
                break;
