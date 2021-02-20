@@ -24,12 +24,12 @@ $action = filter_input(INPUT_POST, 'action');
 
     // Check and report the result
           if($addToCartOutcome === 1){
-            $message = "<p>Item was added to your cart</p>";
-            header('location: /week3/');
+            $_SESSION['message'] = "<p>Item was added to your cart</p>";
+            include '/week3/';
             exit;
            } else {
-            $message = "<p>Sorry item was not added to your cart. Please try again.</p>";
-            header('location: /week3/');
+            $_SESSION['message'] = "<p>Sorry item was not added to your cart. Please try again.</p>";
+            include '/week3/';
             exit;
            }
                break;

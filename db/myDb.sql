@@ -31,16 +31,7 @@ CREATE TABLE products (
   PRIMARY KEY (product_id)
 );
 
-CREATE TABLE reviews (
-  review_id SERIAL,
-  user_id int NOT NULL,
-  product_id int NOT NULL,
-  review_text text,
-  created_at date,
-  PRIMARY KEY (review_id),
-  FOREIGN KEY (user_id) REFERENCES users (user_id),
-  FOREIGN KEY (product_id) REFERENCES products (product_id)
-);
+
 
 CREATE TABLE shopping_carts (
   cart_id SERIAL,
@@ -49,6 +40,7 @@ CREATE TABLE shopping_carts (
   PRIMARY KEY (cart_id),
   FOREIGN KEY (user_id) REFERENCES users (user_id),
   FOREIGN KEY (product_id) REFERENCES products (product_id)
+  ON DELETE CASCADE
 );
 
 INSERT INTO users (admin, first_name, last_name, email) VALUES (true, 'Sarah', 'Parsons', 'sarahreed101@hotmail.com');
@@ -63,7 +55,5 @@ INSERT INTO products (name, description, price, type, picture_path) VALUES ('T-S
 ('Long Blush Dress', 'This would make the perfect bridesmaid dress, but is also perfect for any occasion', 20.54, 'dress', 'images/pink-long-dress.jpg'),
 ('Blush Colored Pants', 'These are the perfect new addition to your wardrobe. They are young, hip, and will make all your friends jealous.', 14.98, 'bottom', 'images/pink-pants.jpg'),
 ('Poncho', 'Spice up your style with this super cute poncho. It is so comfy you will wonder were it has been all your life!', 13.77, 'top', 'images/poncho.jpg');
-INSERT INTO reviews (user_id, product_id, review_text) VALUES (1, 6, 'This my favorite shirt! Its so comfy and cute. Everyone needs one.'),
-(1, 1, 'This is the most comfy dress I have ever worn!'),
-(1, 8, 'I just wore this to a friends wedding it was perfect! Very high quality materials.');
+
 INSERT INTO shopping_carts (user_id, product_id) VALUES (1, 5), (1, 4), (1, 8);
