@@ -68,6 +68,16 @@ function getProductsByType($type) {
             return $products; 
         }
 
+        function getName($itemId, $db) {
+            $sql = 'SELECT name FROM products WHERE itemId = :itemId'; 
+            $stmt = $db->prepare($sql); 
+            $stmt->bindValue(':itemId', $itemId, PDO::PARAM_STR); 
+            $stmt->execute(); 
+            $name = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+            $stmt->closeCursor(); 
+            return $name; 
+        }
+
         function addProduct($name, $description, $path, $price, $type, $db) {
             // The SQL statement
          $sql = 'INSERT INTO products (name, description, price, type, picture_path) VALUES (:name, :description, :price, :type, :path)';
