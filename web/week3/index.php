@@ -38,6 +38,7 @@ $action = filter_input(INPUT_POST, 'action');
                 exit;
            }
            header('location: /week3/');
+           exit;
                break;
      case 'shoppingCart': 
 $shoppingCartInfo = getShoppingCartInfo($_SESSION['userData']['user_id'], $db);
