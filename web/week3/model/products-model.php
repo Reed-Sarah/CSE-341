@@ -69,7 +69,7 @@ function getProductsByType($type) {
         }
 
         function getName($itemId, $db) {
-            $sql = 'SELECT name FROM products WHERE itemId = :itemId'; 
+            $sql = 'SELECT name FROM products WHERE product_id = :itemId'; 
             $stmt = $db->prepare($sql); 
             $stmt->bindValue(':itemId', $itemId, PDO::PARAM_STR); 
             $stmt->execute(); 
