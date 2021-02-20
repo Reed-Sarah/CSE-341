@@ -21,7 +21,7 @@ $action = filter_input(INPUT_POST, 'action');
         exit;
      }
      $addToCartOutcome = addToCart($itemId, $_SESSION['userData']['user_id'], $db);
-     Name = getName($itemId, $db);
+     $itemName = getName($itemId, $db);
      var_dump($itemName);
     // Check and report the result
           if($addToCartOutcome === 1){
