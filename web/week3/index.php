@@ -25,7 +25,7 @@ $action = filter_input(INPUT_POST, 'action');
 
     // Check and report the result
           if($addToCartOutcome === 1){
-            $_SESSION['message'] = "<p>$itemName was added to your cart</p>";
+            $_SESSION['message'] = "<p>$itemName[0] was added to your cart</p>";
             //header('location: /week3/');
             header("Location: {$_SERVER[HTTP_REFERER]}");
             exit;
