@@ -21,11 +21,11 @@ $action = filter_input(INPUT_POST, 'action');
         exit;
      }
      $addToCartOutcome = addToCart($itemId, $_SESSION['userData']['user_id'], $db);
-     $_SESSION['productName']= getName($itemId, $db);
+     $itemName = getName($itemId, $db);
      var_dump($itemName);
     // Check and report the result
           if($addToCartOutcome === 1){
-            $_SESSION['message'] = "<p>" . $_SESSION['productName'][0]['name'] . " was added to your cart</p>";
+            $_SESSION['message'] = "<p>" . $itemName[0]['name'] . " was added to your cart</p>";
             //header('location: /week3/');
             header("Location: {$_SERVER[HTTP_REFERER]}");
             var_dump($itemName);
